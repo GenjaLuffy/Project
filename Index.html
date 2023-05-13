@@ -5,22 +5,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website</title>
+    <title>Gaming Top-Up Website</title>
 </head>
 <body>
-    <header>
-        <div class="main">
+    <nav>
+        
+            <label class="Logo">Pay2Play</label>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Product</a></li>
                 <li><a href="#">Services</a></li>
+                <li><a href="#">LogIn</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="loginin.html">LogIn</a></li>
             </ul>
-        </div>
-    </header>
+    </nav>
 
-    
+    <div class="slideshow-container">
+      <!-- Full width image with text and number -->
+      <div class="mySlide-fade">
+        <div class="numbertext">1/4</div>
+        <img src="../Images/apexlegend.png" alt="Apex Legend" style="width: 100%;">
+        <div class="text">Apex Legend</div>
+      </div>
+
+      <div class="mySlide-fade">
+        <div class="numbertext">2/4</div>
+        <img src="../Images/Pubg.png" alt="Pubg" style="width: 100%;">
+        <div class="text">Pubg</div>
+      </div>
+
+      <div class="mySlide-fade">
+        <div class="numbertext">1/4</div>
+        <img src="../Images/Mobile legend.png" alt="Mobile legend" style="width: 100%;">
+        <div class="text">Mobile legend</div>
+      </div>
+
+      <div class="mySlide-fade">
+        <div class="numbertext">1/4</div>
+        <img src="../Images/freefire.png" alt="Freefire" style="width: 100%;">
+        <div class="text">Freefire</div>
+      </div>
+
+
+<!-- Next and previoous action button  -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="CurrentSlide(1)"></span>
+      <span class="dot" onclick="CurrentSlide(2)"></span>
+      <span class="dot" onclick="CurrentSlide(3)"></span>
+      <span class="dot" onclick="CurrentSlide(4)"></span>
+    </div>
 </body>
 </html>
+           
