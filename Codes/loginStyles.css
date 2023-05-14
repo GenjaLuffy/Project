@@ -7,6 +7,7 @@
   align-items: center;
   max-width: 1140px;
   overflow: hidden;
+  font-size: 1.3em;
 }
 .form-box {
   position: relative;
