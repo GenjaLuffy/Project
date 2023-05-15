@@ -92,7 +92,7 @@
 }
 .input-box input:focus ~ label,
 .input-box input:valid ~ label {
-  top: -5px;
+  top: -50px;
 }
 
 .input-box input {
@@ -144,7 +144,7 @@
   color: #fff;
   font-weight: 500;
 }
-.btn .login{
+.btn .login {
   color: #fff;
 }
 .usernames {

@@ -6,6 +6,9 @@
   list-style: none;
   box-sizing: border-box;
 }
+:root{
+  --transition:all 0.3s ease-in-out;
+}
 body {
   background-image: url(../Images/background.jpg);
   background-repeat: no-repeat;
@@ -65,8 +68,12 @@ a:active {
   color: wheat;
   opacity: 0.15s;
 }
-/* @media (max-width: 575.98px){
-    body{
-       background: blue;
-    }
-} */
+@media (max-width: 575.98px) {
+  .wrapper .form-box.login {
+    width: 350px;
+  }
+  .wrapper .form-box.register {
+    width: 350px;
+    /* height: ; */
+  }
+}
