@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../frontend/assets/css/profile.css" />
+    <link rel="stylesheet" href="../frontend/assets/css/style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <div class="header-inner">
+          <img
+            src="../frontend/assets/images/LOGO.png"
+            class="sitebrand"
+            alt=""
+          />
+          <nav>
+            <ul>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="#">Search</a></li>
+              <li><a href="#">Cart</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="./loginin.html">LogIn</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="profile-detail">
+      <div class="container">
+        <div class="page-header">
+          <h1>Profile</h1>
+          <figure class="profile-avatar">
+            <img src="#" alt="" />
+          </figure>
+        </div>
+        <div class="profile-container">
+          <div class="profile-nav">
+            <ul class="menu">
+              <li>
+                <a href="#">Orders</a>
+              </li>
+              <li>
+                <a href="#">Profile</a>
+              </li>
+              <li>
+                <a href="#">Setting</a>
+              </li>
+              <li>
+                <a href="#">Sign-Out</a>
+              </li>
+            </ul>
+          </div>
+          <div class="profile-content">
+            <form action="#" method="post" class="profile-detail-form">
+              <div class="form-field">
+                <label for="profilepic">Profile Picture</label>
+                <input type="file" name="profilepic" id="profilepic" />
+              </div>
+              <div class="form-group">
+                <div class="form-floating">
+                  <span class="icon">
+                    <ion-icon name="person-circle-outline"></ion-icon>
+                  </span>
+                  <input
+                    type="text"
+                    id="firstname"
+                    class="form-control fname"
+                    placeholder="firstname"
+                  />
+                  <label for="firstname">Firstname</label>
+                </div>
+                <div class="form-floating">
+                  <span class="icon">
+                    <ion-icon name="person-circle-outline"></ion-icon>
+                  </span>
+                  <input
+                    type="text"
+                    id="lastname"
+                    class="form-control lname"
+                    placeholder="lastname"
+                  />
+                  <label for="lastname">Lastname</label>
+                </div>
+              </div>
+              <div class="form-floating">
+                <span class="icon">
+                  <ion-icon name="mail"></ion-icon>
+                </span>
+                <input
+                  type="email"
+                  id="email"
+                  class="form-control"
+                  placeholder="email"
+                  required
+                />
+                <label for="email">Email</label>
+              </div>
+              <div class="form-floating">
+                <span class="icon">
+                  <ion-icon name="phone-portrait-outline"></ion-icon>
+                </span>
+                <input
+                  type="text"
+                  id="phonenumber"
+                  class="form-control"
+                  placeholder="number"
+                />
+                <label for="phonenumber">Number</label>
+              </div>
+              <div class="form-floating">
+                <span class="icon">
+                  <ion-icon name="lock-open"></ion-icon>
+                </span>
+                <input
+                  type="text"
+                  id="password"
+                  class="form-control"
+                  placeholder="Password"
+                />
+                <label for="password">Password</label>
+              </div>
+              <button type="submit" class="btn-submit">Update Profile</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/
+    ionicons.js"
+    ></script>
+  </body>
+</html>
