@@ -1,6 +1,7 @@
 const wrapper = document.getElementById('wrapper');
 const loginLink = document.querySelector('.login-link');
 const registerLink = document.querySelector('.register-link');
+const btnPopup = document.querySelector('.btnLogin-popup');
 
 registerLink.addEventListener('click',(e)=>{
     e.preventDefault();
@@ -9,4 +10,8 @@ registerLink.addEventListener('click',(e)=>{
 loginLink.addEventListener('click',(e)=>{
     e.preventDefault();
     wrapper.classList.remove('is-active');
+});
+btnPopup.addEventListener('click',(e)=>{
+    e.preventDefault();
+    wrapper.classList.add('active-popup');
 });

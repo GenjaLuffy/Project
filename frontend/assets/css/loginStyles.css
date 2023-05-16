@@ -8,6 +8,28 @@
   max-width: 1140px;
   overflow: hidden;
   font-size: 1.3em;
+  transform: scale(0);
+  transition: transform 0.5s ease, height 0.2s ease;
+}
+.wrapper.active-popup {
+  transform: scale(1);
+}
+.btnLogin-popup {
+  width: 70px;
+  height: 35px;
+  background: transparent;
+  border: 2px solid;
+  outline: #000;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  margin-left: 20px;
+  transition: 0.1s;
+}
+.btnLogin-popup:hover {
+  background: #000;
+  color: #fff;
 }
 .form-box {
   position: relative;
@@ -24,7 +46,6 @@
   width: 100%;
   padding: 40px;
 }
-
 .wrapper .form-box.login {
   transition: transform 0.18s ease;
   transform: translateX(0);
