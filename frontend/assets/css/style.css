@@ -1,3 +1,4 @@
+/* Start of index page */
 * {
   margin: 0;
   padding: 0;
@@ -163,6 +164,36 @@ img {
 .bestselling-heading {
   padding-left: 70px;
 }
+
+.site-footer {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 50px 0;
+}
+.footer-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.footer-item img {
+  max-width: 90px;
+}
+.footer-list a {
+  font-size: 1em;
+  color: #000;
+  text-decoration: none;
+}
+.footer-list a:hover {
+  text-decoration: none;
+  color: rebeccapurple;
+}
+.footer-img {
+  padding-top: 25px;
+  max-width: 100px;
+  height: auto;
+}
+
+/* End of index page */
 
 @media (max-width: 575.98px) {
   .wrapper .form-box.login {

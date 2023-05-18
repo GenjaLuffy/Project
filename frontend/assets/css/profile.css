@@ -1,6 +1,4 @@
-/* .profile-detail{
-    padding: 50px 0;
-} */
+/* Start of Profile page */
 
 .page-header {
   padding: 70px 15px;
@@ -113,3 +111,5 @@
 .form-control .form-control:not(:placeholder-shown) ~ label {
   top: -17px;
 }
+
+/* End of Profile page */
