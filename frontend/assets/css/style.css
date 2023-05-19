@@ -14,6 +14,7 @@ body {
   background-image: url(../Images/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 img {
   height: auto;
@@ -165,10 +166,38 @@ img {
   padding-left: 70px;
 }
 
+.btn-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.moreproduct {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
+.moreproduct-btn {
+  padding: 20px;
+  border-radius: 50px;
+  color: #000;
+  border: #000 2px solid;
+  font-size: 1em;
+  background-color: rgba(187, 211, 203, 0.518);
+  backdrop-filter: blur(50px);
+}
+.moreproduct-btn:hover {
+  text-decoration: none;
+  color: black;
+  background-color: rgba(74, 66, 179, 0.5);
+}
+
 .site-footer {
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   padding: 50px 0;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 .footer-inner {
   display: grid;
@@ -177,6 +206,7 @@ img {
 
 .footer-item img {
   max-width: 90px;
+  padding-right: 15px;
 }
 .footer-list a {
   font-size: 1em;
@@ -190,7 +220,15 @@ img {
 .footer-img {
   padding-top: 25px;
   max-width: 100px;
-  height: auto;
+}
+.connect-container {
+  display: flex;
+  gap: 50px;
+}
+.footerconnect-img {
+  padding-top: 25px;
+  max-width: 100px;
+  max-height: 65px;
 }
 
 /* End of index page */
