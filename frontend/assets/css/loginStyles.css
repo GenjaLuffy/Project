@@ -1,3 +1,4 @@
+/* Start of Login page */
 * {
   box-sizing: border-box;
 }
@@ -199,17 +200,4 @@
   flex-direction: column;
   height: 90vh;
 }
-
-.site-footer {
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 50px 0;
-}
-.footer-inner {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.footer-item img {
-  max-width: 90px;
-}
+/* End of Login page */
