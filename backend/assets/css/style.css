@@ -1,0 +1,253 @@
+/* Start of index page */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+:root {
+  --transition: all 0.3s ease-in-out;
+}
+body {
+  background-image: url(../Images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.site-header {
+  padding: 10px 0;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Logo {
+  color: black;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 20px;
+  font-weight: bold;
+}
+.sitebrand {
+  max-height: 80px;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+
+nav ul li a {
+  color: black;
+  font-size: 15px;
+  text-transform: uppercase;
+  transition: opacity 0.15s;
+  padding: 7px 5px;
+  border-radius: 3px;
+}
+a:hover,
+a:active {
+  text-decoration: underline;
+  color: wheat;
+  opacity: 0.15s;
+}
+
+h5 {
+  text-align: center;
+  margin: 0;
+  padding-top: 10px;
+}
+
+.bestselling-headding {
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+
+.best-content {
+  width: 20%;
+  overflow: hidden;
+
+  box-sizing: border-box;
+
+  text-align: center;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition: 0.4s;
+  background: #f2f2f2;
+  background: #42b2df94;
+}
+
+.img-wrap {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+
+  text-align: center;
+  margin: 0;
+}
+
+.Product {
+  margin: 50px 0;
+}
+
+.product-content {
+  width: 20%;
+  margin: 15px;
+  box-sizing: border-box;
+
+  text-align: center;
+  border-radius: 15px;
+  cursor: pointer;
+  padding-top: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition: 0.4s;
+  background: #f2f2f2;
+}
+.more-product-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.more-product-content a {
+  color: #000;
+}
+
+.bestselling-container {
+  width: 1200px;
+  margin: 100px auto;
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  padding: 50px 20px;
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+}
+
+.best-selling {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.best-content h5 {
+  padding: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.bestselling-heading {
+  padding-left: 70px;
+}
+
+.btn-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.moreproduct {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
+.moreproduct-btn {
+  padding: 20px;
+  border-radius: 50px;
+  color: #000;
+  border: #000 2px solid;
+  font-size: 1em;
+  background-color: rgba(187, 211, 203, 0.518);
+  backdrop-filter: blur(50px);
+}
+.moreproduct-btn:hover {
+  text-decoration: none;
+  color: black;
+  background-color: rgba(74, 66, 179, 0.5);
+}
+
+.site-footer {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding-top: 50px;
+  padding-bottom: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+.footer-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.footer-item img {
+  max-width: 90px;
+  padding-right: 15px;
+}
+.footer-list a {
+  font-size: 1em;
+  color: #000;
+  text-decoration: none;
+}
+.footer-list a:hover {
+  text-decoration: none;
+  color: rebeccapurple;
+}
+.footer-img {
+  padding-top: 25px;
+  max-width: 100px;
+}
+.connect-container {
+  display: flex;
+  gap: 50px;
+}
+.footerconnect-img {
+  padding-top: 25px;
+  max-width: 100px;
+  max-height: 65px;
+}
+
+.copyright {
+  margin-top: 40px;
+}
+.copyright p {
+  padding-top: 20px;
+  border-top: 2px solid rgba(0, 0, 0, 0.19);
+}
+
+/* End of index page */
+
+@media (max-width: 575.98px) {
+  .wrapper .form-box.login {
+    width: 350px;
+  }
+  .wrapper .form-box.register {
+    width: 350px;
+    /* height: ; */
+  }
+}
