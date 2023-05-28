@@ -129,7 +129,8 @@
 
     <div class="moreproduct">
         <div class="btn-container">
-            <a href="" class="moreproduct-btn">More Product <ion-icon name="arrow-forward-outline"></ion-icon>
+            <a href="moreproduct.php" class="moreproduct-btn">More Product <ion-icon name="arrow-forward-outline">
+                </ion-icon>
             </a>
         </div>
     </div>
