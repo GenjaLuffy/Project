@@ -1,90 +1,11 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: "Times New Roman", Times, serif;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
-  }
-
-  :root {
-    --transition: all 0.3s ease-in-out;
-  }
-
-  body {
-    background-image: url(../Images/background.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  img {
-    height: auto;
-    max-width: 100%;
-    text-align: center;
-    margin: 0;
-}
-  
-
-  .container {
-    max-width: 1140px;
-    margin: 0 auto;
-  }
-  
-  .site-header {
-    padding: 10px 0;
-    background-color: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-  }
-  
-  .header-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-  }
-
-.Logo {
-  color: black;
-  font-size: 35px;
-  line-height: 80px;
-  padding: 0 20px;
-  font-weight: bold;
-}
-
-.sitebrand {
-  max-height: 80px;
-}
-
-nav ul li {
-  display: inline-block;
-  line-height: 80px;
-  margin: 0 5px;
-}
-
-nav ul li a {
-  color: black;
-  font-size: 15px;
-  text-transform: uppercase;
-  transition: opacity 0.15s;
-  padding: 7px 5px;
-  border-radius: 3px;
-}
-
-a:hover,
-a:active {
-  text-decoration: underline;
-  color: wheat;
-  opacity: 0.15s;
-}
-
-.moreproduct-heading{
+/* Start of More product page */
+.mobilegame-heading {
   padding-left: 100px;
   margin-bottom: 25px;
   margin-top: 25px;
 }
 
-.moreproduct-content{
+.mobilegame-content {
   width: 20%;
   overflow: hidden;
   box-sizing: border-box;
@@ -111,3 +32,30 @@ h5 {
   padding-top: 10px;
 }
 
+.mobilegame-container{
+  width: 1200px;
+  margin: 100px auto;
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  padding: 50px 20px;
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+}
+
+.mobilegame{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.mobilegame-content h5{
+  padding: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.mobilegame-heading{
+  padding-left: 70px;
+}
+
+
+/* End of More product page */
