@@ -1,196 +1,219 @@
+<?php
+include 'connect.php';
+
+if (isset($_POST['submit'])) {
+    $First_name = $_POST['f_name'];
+    $Last_name = $_POST['l_name'];
+    $Phone_no = $_POST['mobile'];
+    $Email = $_POST['email'];
+    $Password = $_POST['password'];
+    $Conform_Password = $_POST['c_password'];
+
+
+    $sql = "insert into `user-info` (First_name,Last_name,Phone_no,Email,Password,Conform_Password)
+    values('$First_name', '$Last_name', '$Phone_no','$Email','$Password','$Conform_Password')";
+    $result = mysqli_query($con, $sql);
+    if ($result) {
+        echo '<script>alert("Account Created Successfully")</script>';
+    } else {
+        die(mysqli_error($con));
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="./assets/css/loginStyles.css" />
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login</title>
+    <link rel="stylesheet" href="./assets/css/loginStyles.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="container">
-      <div class="header-inner">
-        <img src="assets/images/LOGO.png" class="sitebrand" alt="" />
-        <nav>
-          <ul>
-            <li><a href="./index.php">Home</a></li>
-            <li><a href="#">Contact</a></li>
-            <button class="btnLogin-popup">Login</button>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </header>
-
-  <!--Login start-->
-  <section class="login-page">
-    <div class="container">
-      <div class="wrapper" id="wrapper">
-        <div class="form-box login">
-          <span class="icon-close">
-            <ion-icon name="close-outline"></ion-icon>
-          </span>
-          <h2>Login</h2>
-          <form action="#">
-            <div class="input-box">
-              <span class="icon">
-                <ion-icon name="mail"></ion-icon>
-              </span>
-              <input type="email" required />
-              <label>Email</label>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <img src="assets/images/LOGO.png" class="sitebrand" alt="" />
+                <nav>
+                    <ul>
+                        <li><a href="./index.php">Home</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <button class="btnLogin-popup">Login</button>
+                    </ul>
+                </nav>
             </div>
-            <div class="input-box">
-              <span class="icon">
-                <ion-icon name="lock-open"></ion-icon>
-              </span>
-              <input type="password" required />
-              <label>Password</label>
-            </div>
-            <div class="remember-forgot">
-              <label><input type="checkbox" />Remember me</label>
-              <a href="#">Forgot Password?</a>
-            </div>
-            <button type="submit" class="btn">
-              <a href="./profile.php" class="login">Login</a>
-            </button>
-            <div class="login-register">
-              <p>
-                Don't have an account?
-                <a href="#" class="register-link">Register</a>
-              </p>
-            </div>
-          </form>
         </div>
-        <!--Register Start-->
-        <div class="form-box register">
-          <span class="icon-close">
-            <ion-icon name="close-outline"></ion-icon>
-          </span>
-          <h2>Registration</h2>
-          <form action="#">
-            <div class="usernames">
-              <div class="input-box">
-                <span class="icon">
-                  <ion-icon name="person-circle-outline"></ion-icon>
-                </span>
-                <input type="text" required />
-                <label>Firstname</label>
-              </div>
+    </header>
 
-              <div class="input-box">
-                <span class="icon">
-                  <ion-icon name="person-circle-outline"></ion-icon>
-                </span>
-                <input type="text" required />
-                <label>Lastname</label>
-              </div>
+    <!--Login start-->
+    <section class="login-page">
+        <div class="container">
+            <div class="wrapper" id="wrapper">
+                <div class="form-box login">
+                    <span class="icon-close">
+                        <ion-icon name="close-outline"></ion-icon>
+                    </span>
+                    <h2>Login</h2>
+                    <form action="#">
+                        <div class="input-box">
+                            <span class="icon">
+                                <ion-icon name="mail"></ion-icon>
+                            </span>
+                            <input type="email" required />
+                            <label>Email</label>
+                        </div>
+                        <div class="input-box">
+                            <span class="icon">
+                                <ion-icon name="lock-open"></ion-icon>
+                            </span>
+                            <input type="password" required />
+                            <label>Password</label>
+                        </div>
+                        <div class="remember-forgot">
+                            <label><input type="checkbox" />Remember me</label>
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="btn">
+                            <a href="./profile.php" class="login">Login</a>
+                        </button>
+                        <div class="login-register">
+                            <p>
+                                Don't have an account?
+                                <a href="#" class="register-link">Register</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+                <!--Register Start-->
+                <div class="form-box register">
+                    <span class="icon-close">
+                        <ion-icon name="close-outline"></ion-icon>
+                    </span>
+                    <h2>Registration</h2>
+                    <form action="#" method="post">
+                        <div class="usernames">
+                            <div class="input-box">
+                                <span class="icon">
+                                    <ion-icon name="person-circle-outline"></ion-icon>
+                                </span>
+                                <input type="text" required name="f_name" />
+                                <label>Firstname</label>
+                            </div>
+
+                            <div class="input-box">
+                                <span class="icon">
+                                    <ion-icon name="person-circle-outline"></ion-icon>
+                                </span>
+                                <input type="text" required name="l_name" />
+                                <label>Lastname</label>
+                            </div>
+                        </div>
+
+                        <div class="input-box">
+                            <span class="icon">
+                                <ion-icon name="phone-portrait-outline"></ion-icon>
+                            </span>
+                            <input type="number" required name="mobile" />
+                            <label>Phone Number</label>
+                        </div>
+
+                        <div class="input-box">
+                            <span class="icon">
+                                <ion-icon name="mail"></ion-icon>
+                            </span>
+                            <input type="email" required name="email" />
+                            <label>Email</label>
+                        </div>
+
+                        <div class="input-box">
+                            <span class="icon">
+                                <ion-icon name="lock-open"></ion-icon>
+                            </span>
+                            <input type="password" required class="password" name="password" />
+                            <label>Password</label>
+                        </div>
+
+                        <div class="input-box">
+                            <span class="icon">
+                                <ion-icon name="lock-open"></ion-icon>
+                            </span>
+                            <input type="password" required class="c_password" name="c_password" />
+                            <label>Conform Password</label>
+                        </div>
+
+                        <div class="remember-forgot">
+                            <label><input type="checkbox" /> I agree to the terms &
+                                condition</label>
+                        </div>
+
+                        <button type="submit" class="btn" name="submit">Register</button>
+
+                        <div class="login-register">
+                            <p>
+                                Already have an account?
+                                <a href="#" class="login-link">Login</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
             </div>
-
-            <div class="input-box">
-              <span class="icon">
-                <ion-icon name="phone-portrait-outline"></ion-icon>
-              </span>
-              <input type="number" required max="999999999" />
-              <label>Phone Number</label>
-            </div>
-
-            <div class="input-box">
-              <span class="icon">
-                <ion-icon name="mail"></ion-icon>
-              </span>
-              <input type="email" required />
-              <label>Email</label>
-            </div>
-
-            <div class="input-box">
-              <span class="icon">
-                <ion-icon name="lock-open"></ion-icon>
-              </span>
-              <input type="password" required />
-              <label>Password</label>
-            </div>
-
-            <div class="input-box">
-              <span class="icon">
-                <ion-icon name="lock-open"></ion-icon>
-              </span>
-              <input type="password" required />
-              <label>Conform Password</label>
-            </div>
-
-            <div class="remember-forgot">
-              <label><input type="checkbox" /> I agree to the terms &
-                condition</label>
-            </div>
-
-            <button type="submit" class="btn">Register</button>
-
-            <div class="login-register">
-              <p>
-                Already have an account?
-                <a href="#" class="login-link">Login</a>
-              </p>
-            </div>
-          </form>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-item">
-          <img src="../frontend/assets/images/LOGO.png" alt="" />
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-item">
+                    <img src="../frontend/assets/images/LOGO.png" alt="" />
+                </div>
+                <div class="footer-item">
+                    <h2>PRODUCTS</h2>
+                    <br />
+                    <ul>
+                        <li class="footer-list"><a href="#">Top Up</a></li>
+                        <br />
+                        <li class="footer-list"><a href="#">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-item">
+                    <h2>PAYMENTS</h2>
+                    <a href="#">
+                        <img src="./assets/images/khalti.png" alt="" class="footer-img" />
+                    </a>
+                    <a href="#">
+                        <img src="./assets/images/esewa.png" alt="" class="footer-img" />
+                    </a>
+                </div>
+                <div class="footer-item">
+                    <h2>CONNECT WITH US</h2>
+                    <div class="connect-container">
+                        <a href="#">
+                            <img src="./assets/images/facebook.png" alt="" class="footerconnect-img" />
+                        </a>
+                        <a href="#">
+                            <img src="./assets/images/insta.png" alt="" class="footerconnect-img" />
+                        </a>
+                        <a href="#">
+                            <img src="./assets/images/gmail.png" alt="" class="footerconnect-img" />
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="footer-item">
-          <h2>PRODUCTS</h2>
-          <br />
-          <ul>
-            <li class="footer-list"><a href="#">Top Up</a></li>
-            <br />
-            <li class="footer-list"><a href="#">Gift Cards</a></li>
-          </ul>
+        <div class="copyright">
+            <div class="container">
+                <p>&copy; COPYRIGHT2023. All right reserved.</p>
+            </div>
         </div>
-        <div class="footer-item">
-          <h2>PAYMENTS</h2>
-          <a href="#">
-            <img src="./assets/images/khalti.png" alt="" class="footer-img" />
-          </a>
-          <a href="#">
-            <img src="./assets/images/esewa.png" alt="" class="footer-img" />
-          </a>
-        </div>
-        <div class="footer-item">
-          <h2>CONNECT WITH US</h2>
-          <div class="connect-container">
-            <a href="#">
-              <img src="./assets/images/facebook.png" alt="" class="footerconnect-img" />
-            </a>
-            <a href="#">
-              <img src="./assets/images/insta.png" alt="" class="footerconnect-img" />
-            </a>
-            <a href="#">
-              <img src="./assets/images/gmail.png" alt="" class="footerconnect-img" />
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="copyright">
-      <div class="container">
-        <p>&copy; COPYRIGHT2023. All right reserved.</p>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script src="../frontend/assets/js/index.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/
+    <script src="../frontend/assets/js/index.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/
     ionicons.js"></script>
 </body>
 
