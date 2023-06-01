@@ -1,25 +1,59 @@
 <?php
 include 'connect.php';
-
 if (isset($_POST['submit'])) {
-    $First_name = $_POST['f_name'];
-    $Last_name = $_POST['l_name'];
-    $Phone_no = $_POST['mobile'];
-    $Email = $_POST['email'];
-    $Password = $_POST['password'];
-    $Conform_Password = $_POST['c_password'];
+    $First_name = mysqli_real_escape_string($con, $_POST['f_name']);
+    $Last_name = mysqli_real_escape_string($con, $_POST['l_name']);
+    $Phone_no = mysqli_real_escape_string($con, $_POST['mobile']);
+    $Email = mysqli_real_escape_string($con, $_POST['email']);
+    $Password = mysqli_real_escape_string($con, $_POST['password']);
+    $Confirm_Password = mysqli_real_escape_string($con, $_POST['c_password']);
 
-
-    $sql = "insert into `user-info` (First_name,Last_name,Phone_no,Email,Password,Conform_Password)
-    values('$First_name', '$Last_name', '$Phone_no','$Email','$Password','$Conform_Password')";
-    $result = mysqli_query($con, $sql);
-    if ($result) {
-        echo '<script>alert("Account Created Successfully")</script>';
+    $emailquery = "SELECT * FROM `user-info` WHERE Email='$Email'";
+    $query = mysqli_query($con, $emailquery);
+    $emailcount = mysqli_num_rows($query);
+    if ($emailcount > 0) {
+        echo "Email already exist";
     } else {
-        die(mysqli_error($con));
+        if ($Password === $Confirm_Password) {
+            $insertquery = "insert into `user-info` (First_name,Last_name,Phone_no,Email,Password,Confirm_Password)
+    values('$First_name', '$Last_name', '$Phone_no','$Email','$Password','$Confirm_Password')";
+            $result = mysqli_query($con, $insertquery);
+
+
+            if ($result) {
+                echo '<script>alert("Account Created Successfully")</script>';
+            } else {
+                die(mysqli_error($con));
+            }
+        } else {
+            echo '<script>alert("Password Doesnot match")</script>';
+        }
     }
 }
 ?>
+<?php
+include 'connect.php';
+if (isset($_POST['login'])) {
+    $email = $_POST['lemail'];
+    $password = $_POST['lpassword'];
+    $email_search = "SELECT * FROM `user-info` WHERE Email='$email'";
+    $query = mysqli_query($con, $email_search);
+    $email_count = mysqli_num_rows($query);
+    if ($email_count) {
+        $email_pass = mysqli_fetch_assoc($query);
+        $db_pass = $email_pass['Password'];
+        if ($db_pass) {
+            echo '<script>alert("Login Successfully")</script>';
+        } else {
+            echo '<script>alert("Incorrect password")</script>';
+        }
+    } else {
+        echo '<script>alert("Invalid Email")</script>';
+    }
+}
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -58,27 +92,27 @@ if (isset($_POST['submit'])) {
                         <ion-icon name="close-outline"></ion-icon>
                     </span>
                     <h2>Login</h2>
-                    <form action="#">
-                        <div class="input-box">
+                    <form action="#" method="post">
+                        <div class=" input-box">
                             <span class="icon">
                                 <ion-icon name="mail"></ion-icon>
                             </span>
-                            <input type="email" required />
+                            <input type="email" required name="lemail" />
                             <label>Email</label>
                         </div>
                         <div class="input-box">
                             <span class="icon">
                                 <ion-icon name="lock-open"></ion-icon>
                             </span>
-                            <input type="password" required />
+                            <input type="password" required name="lpassword" />
                             <label>Password</label>
                         </div>
                         <div class="remember-forgot">
                             <label><input type="checkbox" />Remember me</label>
                             <a href="#">Forgot Password?</a>
                         </div>
-                        <button type="submit" class="btn">
-                            <a href="./profile.php" class="login">Login</a>
+                        <button type="submit" class="btn" name="login">
+                            <a href="index.php" class="login">Login</a>
                         </button>
                         <div class="login-register">
                             <p>
@@ -142,7 +176,7 @@ if (isset($_POST['submit'])) {
                                 <ion-icon name="lock-open"></ion-icon>
                             </span>
                             <input type="password" required class="c_password" name="c_password" />
-                            <label>Conform Password</label>
+                            <label>Confirm Password</label>
                         </div>
 
                         <div class="remember-forgot">
