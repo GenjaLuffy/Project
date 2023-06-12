@@ -1,4 +1,5 @@
 <?php
+global $db_pass;
 include 'connect.php';
 if (isset($_POST['submit'])) {
     $First_name = mysqli_real_escape_string($con, $_POST['f_name']);
@@ -14,7 +15,7 @@ if (isset($_POST['submit'])) {
     if ($emailcount > 0) {
         echo "Email already exist";
     } else {
-        if ($Password === $Confirm_Password) {
+        if ($Password == $Confirm_Password) {
             $insertquery = "insert into `user-info` (First_name,Last_name,Phone_no,Email,Password,Confirm_Password)
     values('$First_name', '$Last_name', '$Phone_no','$Email','$Password','$Confirm_Password')";
             $result = mysqli_query($con, $insertquery);
@@ -40,10 +41,13 @@ if (isset($_POST['login'])) {
     $query = mysqli_query($con, $email_search);
     $email_count = mysqli_num_rows($query);
     if ($email_count) {
-        $email_pass = mysqli_fetch_assoc($query);
-        $db_pass = $email_pass['Password'];
-        if ($db_pass) {
+        $user_data = mysqli_fetch_assoc($query);
+        $db_pass = $user_data['Password'];
+        if ($db_pass == $password) {
+            session_start();
+            $_SESSION['user_id'] = $user_data["ID"];
             echo '<script>alert("Login Successfully")</script>';
+            header("Location: index.php");
         } else {
             echo '<script>alert("Incorrect password")</script>';
         }
