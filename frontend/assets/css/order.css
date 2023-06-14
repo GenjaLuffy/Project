@@ -1,0 +1,10 @@
+
+.order-content{
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    border-radius: 20px;
+}
+table th {
+    padding: 40px;
+}
