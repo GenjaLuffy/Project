@@ -8,6 +8,14 @@ if (isset($_POST['submit'])) {
     $Email = mysqli_real_escape_string($con, $_POST['email']);
     $Password = mysqli_real_escape_string($con, $_POST['password']);
     $Confirm_Password = mysqli_real_escape_string($con, $_POST['c_password']);
+    $Profile = $_FILES['profilepic'];
+
+    $pname = rand(1000, 10000) . '-' . $Profile['name'];
+    $tname = $Profile['tmp_name'];
+    $upload_dir =  'uploads/';
+
+
+    move_uploaded_file($tname, $upload_dir . $pname);
 
     $emailquery = "SELECT * FROM `user-info` WHERE Email='$Email'";
     $query = mysqli_query($con, $emailquery);
@@ -16,8 +24,8 @@ if (isset($_POST['submit'])) {
         echo "Email already exist";
     } else {
         if ($Password == $Confirm_Password) {
-            $insertquery = "insert into `user-info` (First_name,Last_name,Phone_no,Email,Password,Confirm_Password)
-    values('$First_name', '$Last_name', '$Phone_no','$Email','$Password','$Confirm_Password')";
+            $insertquery = "insert into `user-info` (First_name,Last_name,Phone_no,Email,Password,Confirm_Password,userimage)
+            values('$First_name', '$Last_name', '$Phone_no','$Email','$Password','$Confirm_Password','$pname')";
             $result = mysqli_query($con, $insertquery);
 
 
@@ -132,7 +140,7 @@ if (isset($_POST['login'])) {
                         <ion-icon name="close-outline"></ion-icon>
                     </span>
                     <h2>Registration</h2>
-                    <form action="#" method="post">
+                    <form action="#" method="post" enctype="multipart/form-data">
                         <div class="usernames">
                             <div class="input-box">
                                 <span class="icon">
@@ -183,6 +191,10 @@ if (isset($_POST['login'])) {
                             <label>Confirm Password</label>
                         </div>
 
+                        <div class="form-field">
+                            <label for="profilepic">Upload Profile Picture</label>
+                            <input type="file" name="profilepic" id="profilepic" />
+                        </div>
                         <div class="remember-forgot">
                             <label><input type="checkbox" /> I agree to the terms &
                                 condition</label>
@@ -202,57 +214,4 @@ if (isset($_POST['login'])) {
         </div>
     </section>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-inner">
-                <div class="footer-item">
-                    <img src="../frontend/assets/images/LOGO.png" alt="" />
-                </div>
-                <div class="footer-item">
-                    <h2>PRODUCTS</h2>
-                    <br />
-                    <ul>
-                        <li class="footer-list"><a href="#">Top Up</a></li>
-                        <br />
-                        <li class="footer-list"><a href="#">Gift Cards</a></li>
-                    </ul>
-                </div>
-                <div class="footer-item">
-                    <h2>PAYMENTS</h2>
-                    <a href="#">
-                        <img src="./assets/images/khalti.png" alt="" class="footer-img" />
-                    </a>
-                    <a href="#">
-                        <img src="./assets/images/esewa.png" alt="" class="footer-img" />
-                    </a>
-                </div>
-                <div class="footer-item">
-                    <h2>CONNECT WITH US</h2>
-                    <div class="connect-container">
-                        <a href="#">
-                            <img src="./assets/images/facebook.png" alt="" class="footerconnect-img" />
-                        </a>
-                        <a href="#">
-                            <img src="./assets/images/insta.png" alt="" class="footerconnect-img" />
-                        </a>
-                        <a href="#">
-                            <img src="./assets/images/gmail.png" alt="" class="footerconnect-img" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <div class="container">
-                <p>&copy; COPYRIGHT2023. All right reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="../frontend/assets/js/index.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/
-    ionicons.js"></script>
-</body>
-
-</html>
+    <?php include_once 'includes/footer.php'; ?>

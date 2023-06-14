@@ -1,3 +1,24 @@
+<?php
+
+session_start();
+require 'connect.php';
+function  get_user_image()
+{
+    global $con;
+
+    $statement = $con->prepare("SELECT * FROM `user-info` WHERE ID = ? ");
+    $statement->bind_param('i', $_SESSION['user_id']);
+
+    if ($statement->execute()) {
+        $result = $statement->get_result();
+        $data =  $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    return $data;
+}
+
+$user_data = get_user_image();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +42,7 @@
                         <li><a href="#">Search</a></li>
                         <li><a href="#">Cart</a></li>
                         <li><a href="#">Contact</a></li>
-                        <li><a href="./loginin.php">LogIn</a></li>
+                        <li><a href="./login.php">LogIn</a></li>
                     </ul>
                 </nav>
             </div>
@@ -32,9 +53,18 @@
         <div class="container">
             <div class="page-header">
                 <h1>Profile</h1>
-                <figure class="profile-avatar">
-                    <img src="assets/images/img.jpg" alt="" />
-                </figure>
+                <?php if (isset($user_data[0]['userimage'])) : ?>
+                    <figure class="profile-avatar">
+
+
+                        <img src="uploads/<?php echo $user_data[0]['userimage']; ?>" alt="" />
+
+                    </figure>
+                <?php else : ?>
+                    <figure class="profile-avatar">
+                        <img src="./assets/images/img.jpg" alt="">
+                    </figure>
+                <?php endif; ?>
             </div>
             <div class=" profile-container">
                 <div class="profile-nav">
