@@ -21,7 +21,7 @@
                         <li><a href="#">Search</a></li>
                         <li><a href="#">Cart</a></li>
                         <li><a href="#">Contact</a></li>
-                        <li><a href="./loginin.php">LogIn</a></li>
+                        <li><a href="./login.php">LogIn</a></li>
                     </ul>
                 </nav>
             </div>
