@@ -242,12 +242,49 @@ img {
 
 /* End of index page */
 
-@media (max-width: 575.98px) {
-  .wrapper .form-box.login {
-    width: 350px;
+@media only screen and (max-width: 600px) {
+  /* Styles for screens up to 600px wide */
+  .header-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  .wrapper .form-box.register {
-    width: 350px;
-    /* height: ; */
+  .sitebrand {
+    margin-bottom: 20px;
+  }
+  nav {
+    margin-top: 20px;
+  }
+  .best-content,
+  .img-wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  /* Styles for screens up to 900px wide */
+  .img-wrap {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  /* Styles for screens up to 1200px wide */
+  .img-wrap {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  /* Styles for screens up to 1400px wide */
+  .img-wrap {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  /* Styles for screens up to 1600px wide */
+  .img-wrap {
+    grid-template-columns: repeat(6, 1fr);
   }
 }
