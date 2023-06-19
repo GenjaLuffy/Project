@@ -208,3 +208,30 @@
   font-size: 0.9em;
 }
 /* End of Login page */
+
+@media only screen and (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+  .header-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .header-inner img {
+    margin-bottom: 20px;
+  }
+  .header-inner nav {
+    margin-top: 20px;
+  }
+  .login-page .container .form-box {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  @media only screen and (max-width: 768px) {
+    .form-box.register {
+      max-width: 300px;
+    }
+  }
+}
