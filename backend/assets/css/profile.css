@@ -1,6 +1,8 @@
 /* Start of Profile page */
-
-.page-header {
+.container {
+  padding-top: 10px;
+}
+.profile-header {
   padding: 70px 30px;
   backdrop-filter: blur(5px);
   background-color: rgba(110, 110, 246, 0.5);
