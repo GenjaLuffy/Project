@@ -198,7 +198,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 90vh;
+  height: 110vh;
 }
 .form-field {
   margin-bottom: 15px;
@@ -209,29 +209,67 @@
 }
 /* End of Login page */
 
-@media only screen and (max-width: 768px) {
+/* Media queries */
+@media screen and (max-width: 768px) {
+  /* Styles for screens up to 768px wide */
   .container {
-    padding: 0 20px;
+    max-width: 90%;
   }
+
   .header-inner {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .header-inner img {
-    margin-bottom: 20px;
+
+  .header-inner .sitebrand {
+    margin-bottom: 1rem;
   }
+
   .header-inner nav {
-    margin-top: 20px;
+    margin-top: 1rem;
+    text-align: center;
   }
-  .login-page .container .form-box {
+
+  .header-inner nav ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-box {
+    width: 90%;
+  }
+
+  .form-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .input-box input {
+    padding: 0.5rem 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .remember-forgot {
+    font-size: 0.8rem;
+  }
+
+  .login-register {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Styles for screens up to 480px wide */
+  .container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .header-inner {
+    padding: 0;
+  }
+
+  .form-box {
     width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  @media only screen and (max-width: 768px) {
-    .form-box.register {
-      max-width: 300px;
-    }
   }
 }

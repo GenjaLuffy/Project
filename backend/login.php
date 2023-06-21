@@ -65,127 +65,150 @@
     }
 
     ?>
+    <!DOCTYPE html>
+    <html lang="en">
 
-    <?php include_once 'includes/header.php'; ?>
+    <head>
+        <link rel="stylesheet" href="./assets/css/loginStyles.css" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login</title>
+    </head>
 
-
-    <!--Login start-->
-    <section class="login-page">
-        <div class="container">
-            <div class="wrapper" id="wrapper">
-                <div class="form-box login">
-                    <span class="icon-close">
-                        <ion-icon name="close-outline"></ion-icon>
-                    </span>
-                    <h2>Login</h2>
-                    <form action="#" method="post">
-                        <div class=" input-box">
-                            <span class="icon">
-                                <ion-icon name="mail"></ion-icon>
-                            </span>
-                            <input type="email" required name="lemail" />
-                            <label>Email</label>
-                        </div>
-                        <div class="input-box">
-                            <span class="icon">
-                                <ion-icon name="lock-open"></ion-icon>
-                            </span>
-                            <input type="password" required name="lpassword" />
-                            <label>Password</label>
-                        </div>
-                        <div class="remember-forgot">
-                            <label><input type="checkbox" />Remember me</label>
-                            <a href="#">Forgot Password?</a>
-                        </div>
-                        <button type="submit" class="btn" name="login">
-                            <a href="index.php" class="login">Login</a>
-                        </button>
-                        <div class="login-register">
-                            <p>
-                                Don't have an account?
-                                <a href="#" class="register-link">Register</a>
-                            </p>
-                        </div>
-                    </form>
-                </div>
-                <!--Register Start-->
-                <div class="form-box register">
-                    <span class="icon-close">
-                        <ion-icon name="close-outline"></ion-icon>
-                    </span>
-                    <h2>Registration</h2>
-                    <form action="#" method="post" enctype="multipart/form-data">
-                        <div class="usernames">
-                            <div class="input-box">
-                                <span class="icon">
-                                    <ion-icon name="person-circle-outline"></ion-icon>
-                                </span>
-                                <input type="text" required name="f_name" />
-                                <label>Firstname</label>
-                            </div>
-
-                            <div class="input-box">
-                                <span class="icon">
-                                    <ion-icon name="person-circle-outline"></ion-icon>
-                                </span>
-                                <input type="text" required name="l_name" />
-                                <label>Lastname</label>
-                            </div>
-                        </div>
-
-                        <div class="input-box">
-                            <span class="icon">
-                                <ion-icon name="phone-portrait-outline"></ion-icon>
-                            </span>
-                            <input type="number" required name="mobile" />
-                            <label>Phone Number</label>
-                        </div>
-
-                        <div class="input-box">
-                            <span class="icon">
-                                <ion-icon name="mail"></ion-icon>
-                            </span>
-                            <input type="email" required name="email" />
-                            <label>Email</label>
-                        </div>
-
-                        <div class="input-box">
-                            <span class="icon">
-                                <ion-icon name="lock-open"></ion-icon>
-                            </span>
-                            <input type="password" required class="password" name="password" />
-                            <label>Password</label>
-                        </div>
-
-                        <div class="input-box">
-                            <span class="icon">
-                                <ion-icon name="lock-open"></ion-icon>
-                            </span>
-                            <input type="password" required class="c_password" name="c_password" />
-                            <label>Confirm Password</label>
-                        </div>
-
-                        <div class="form-field">
-                            <label for="profilepic">Upload Profile Picture</label>
-                            <input type="file" name="profilepic" id="profilepic" />
-                        </div>
-                        <div class="remember-forgot">
-                            <label><input type="checkbox" /> I agree to the terms &
-                                condition</label>
-                        </div>
-
-                        <button type="submit" class="btn" name="submit">Register</button>
-
-                        <div class="login-register">
-                            <p>
-                                Already have an account?
-                                <a href="#" class="login-link">Login</a>
-                            </p>
-                        </div>
-                    </form>
+    <body>
+        <header class="site-header">
+            <div class="container">
+                <div class="header-inner">
+                    <img src="assets/images/LOGO.png" class="sitebrand" alt="" />
+                    <nav>
+                        <ul>
+                            <li><a href="./index.php">Home</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <button class="btnLogin-popup">Login</button>
+                        </ul>
+                    </nav>
                 </div>
             </div>
-        </div>
-    </section>
+        </header>
+        <!--Login start-->
+        <section class="login-page">
+            <div class="container">
+                <div class="wrapper" id="wrapper">
+                    <div class="form-box login">
+                        <span class="icon-close">
+                            <ion-icon name="close-outline"></ion-icon>
+                        </span>
+                        <h2>Login</h2>
+                        <form action="#" method="post">
+                            <div class=" input-box">
+                                <span class="icon">
+                                    <ion-icon name="mail"></ion-icon>
+                                </span>
+                                <input type="email" required name="lemail" />
+                                <label>Email</label>
+                            </div>
+                            <div class="input-box">
+                                <span class="icon">
+                                    <ion-icon name="lock-open"></ion-icon>
+                                </span>
+                                <input type="password" required name="lpassword" />
+                                <label>Password</label>
+                            </div>
+                            <div class="remember-forgot">
+                                <label><input type="checkbox" />Remember me</label>
+                                <a href="#">Forgot Password?</a>
+                            </div>
+                            <button type="submit" class="btn" name="login">
+                                <a href="index.php" class="login">Login</a>
+                            </button>
+                            <div class="login-register">
+                                <p>
+                                    Don't have an account?
+                                    <a href="#" class="register-link">Register</a>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                    <!--Register Start-->
+                    <div class="form-box register">
+                        <span class="icon-close">
+                            <ion-icon name="close-outline"></ion-icon>
+                        </span>
+                        <h2>Registration</h2>
+                        <form action="#" method="post" enctype="multipart/form-data">
+                            <div class="usernames">
+                                <div class="input-box">
+                                    <span class="icon">
+                                        <ion-icon name="person-circle-outline"></ion-icon>
+                                    </span>
+                                    <input type="text" required name="f_name" />
+                                    <label>Firstname</label>
+                                </div>
 
-    <?php include_once 'includes/footer.php'; ?>
+                                <div class="input-box">
+                                    <span class="icon">
+                                        <ion-icon name="person-circle-outline"></ion-icon>
+                                    </span>
+                                    <input type="text" required name="l_name" />
+                                    <label>Lastname</label>
+                                </div>
+                            </div>
+
+                            <div class="input-box">
+                                <span class="icon">
+                                    <ion-icon name="phone-portrait-outline"></ion-icon>
+                                </span>
+                                <input type="number" required name="mobile" />
+                                <label>Phone Number</label>
+                            </div>
+
+                            <div class="input-box">
+                                <span class="icon">
+                                    <ion-icon name="mail"></ion-icon>
+                                </span>
+                                <input type="email" required name="email" />
+                                <label>Email</label>
+                            </div>
+
+                            <div class="input-box">
+                                <span class="icon">
+                                    <ion-icon name="lock-open"></ion-icon>
+                                </span>
+                                <input type="password" required class="password" name="password" />
+                                <label>Password</label>
+                            </div>
+
+                            <div class="input-box">
+                                <span class="icon">
+                                    <ion-icon name="lock-open"></ion-icon>
+                                </span>
+                                <input type="password" required class="c_password" name="c_password" />
+                                <label>Confirm Password</label>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="profilepic">Upload Profile Picture</label>
+                                <input type="file" name="profilepic" id="profilepic" />
+                            </div>
+                            <div class="remember-forgot">
+                                <label><input type="checkbox" /> I agree to the terms &
+                                    condition</label>
+                            </div>
+
+                            <button type="submit" class="btn" name="submit">Register</button>
+
+                            <div class="login-register">
+                                <p>
+                                    Already have an account?
+                                    <a href="#" class="login-link">Login</a>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <?php include_once 'includes/footer.php'; ?>
