@@ -1,99 +1,73 @@
-<?php
-global $db_pass;
-include 'connect.php';
-if (isset($_POST['submit'])) {
-    $First_name = mysqli_real_escape_string($con, $_POST['f_name']);
-    $Last_name = mysqli_real_escape_string($con, $_POST['l_name']);
-    $Phone_no = mysqli_real_escape_string($con, $_POST['mobile']);
-    $Email = mysqli_real_escape_string($con, $_POST['email']);
-    $Password = mysqli_real_escape_string($con, $_POST['password']);
-    $Confirm_Password = mysqli_real_escape_string($con, $_POST['c_password']);
-    $Profile = $_FILES['profilepic'];
+    <?php
+    global $db_pass;
+    include 'connect.php';
+    if (isset($_POST['submit'])) {
+        $First_name = mysqli_real_escape_string($con, $_POST['f_name']);
+        $Last_name = mysqli_real_escape_string($con, $_POST['l_name']);
+        $Phone_no = mysqli_real_escape_string($con, $_POST['mobile']);
+        $Email = mysqli_real_escape_string($con, $_POST['email']);
+        $Password = mysqli_real_escape_string($con, $_POST['password']);
+        $Confirm_Password = mysqli_real_escape_string($con, $_POST['c_password']);
+        $Profile = $_FILES['profilepic'];
 
-    $pname = rand(1000, 10000) . '-' . $Profile['name'];
-    $tname = $Profile['tmp_name'];
-    $upload_dir =  'uploads/';
-
-
-    move_uploaded_file($tname, $upload_dir . $pname);
-
-    $emailquery = "SELECT * FROM `user-info` WHERE Email='$Email'";
-    $query = mysqli_query($con, $emailquery);
-    $emailcount = mysqli_num_rows($query);
-    if ($emailcount > 0) {
-        echo "Email already exist";
-    } else {
-        if ($Password == $Confirm_Password) {
-            $insertquery = "insert into `user-info` (First_name,Last_name,Phone_no,Email,Password,Confirm_Password,userimage)
-            values('$First_name', '$Last_name', '$Phone_no','$Email','$Password','$Confirm_Password','$pname')";
-            $result = mysqli_query($con, $insertquery);
+        $pname = rand(1000, 10000) . '-' . $Profile['name'];
+        $tname = $Profile['tmp_name'];
+        $upload_dir =  'uploads/';
 
 
-            if ($result) {
-                echo '<script>alert("Account Created Successfully")</script>';
+        move_uploaded_file($tname, $upload_dir . $pname);
+
+        $emailquery = "SELECT * FROM `user-info` WHERE Email='$Email'";
+        $query = mysqli_query($con, $emailquery);
+        $emailcount = mysqli_num_rows($query);
+        if ($emailcount > 0) {
+            echo "Email already exist";
+        } else {
+            if ($Password == $Confirm_Password) {
+                $insertquery = "insert into `user-info` (First_name,Last_name,Phone_no,Email,Password,Confirm_Password,userimage)
+                values('$First_name', '$Last_name', '$Phone_no','$Email','$Password','$Confirm_Password','$pname')";
+                $result = mysqli_query($con, $insertquery);
+
+
+                if ($result) {
+                    echo '<script>alert("Account Created Successfully")</script>';
+                } else {
+                    die(mysqli_error($con));
+                }
             } else {
-                die(mysqli_error($con));
+                echo '<script>alert("Password Doesnot match")</script>';
+            }
+        }
+    }
+    ?>
+    <?php
+    include 'connect.php';
+    if (isset($_POST['login'])) {
+        $email = $_POST['lemail'];
+        $password = $_POST['lpassword'];
+        $email_search = "SELECT * FROM `user-info` WHERE Email='$email'";
+        $query = mysqli_query($con, $email_search);
+        $email_count = mysqli_num_rows($query);
+        if ($email_count) {
+            $user_data = mysqli_fetch_assoc($query);
+            $db_pass = $user_data['Password'];
+            if ($db_pass == $password) {
+                session_start();
+                $_SESSION['user_id'] = $user_data["ID"];
+                echo '<script>alert("Login Successfully")</script>';
+                header("Location: index.php");
+            } else {
+                echo '<script>alert("Incorrect password")</script>';
             }
         } else {
-            echo '<script>alert("Password Doesnot match")</script>';
+            echo '<script>alert("Invalid Email")</script>';
         }
     }
-}
-?>
-<?php
-include 'connect.php';
-if (isset($_POST['login'])) {
-    $email = $_POST['lemail'];
-    $password = $_POST['lpassword'];
-    $email_search = "SELECT * FROM `user-info` WHERE Email='$email'";
-    $query = mysqli_query($con, $email_search);
-    $email_count = mysqli_num_rows($query);
-    if ($email_count) {
-        $user_data = mysqli_fetch_assoc($query);
-        $db_pass = $user_data['Password'];
-        if ($db_pass == $password) {
-            session_start();
-            $_SESSION['user_id'] = $user_data["ID"];
-            echo '<script>alert("Login Successfully")</script>';
-            header("Location: index.php");
-        } else {
-            echo '<script>alert("Incorrect password")</script>';
-        }
-    } else {
-        echo '<script>alert("Invalid Email")</script>';
-    }
-}
 
-?>
+    ?>
 
+    <?php include_once 'includes/header.php'; ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <link rel="stylesheet" href="./assets/css/loginStyles.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-</head>
-
-<body>
-    <header class="site-header">
-        <div class="container">
-            <div class="header-inner">
-                <img src="assets/images/LOGO.png" class="sitebrand" alt="" />
-                <nav>
-                    <ul>
-                        <li><a href="./index.php">Home</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <button class="btnLogin-popup">Login</button>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
 
     <!--Login start-->
     <section class="login-page">
