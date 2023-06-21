@@ -1,4 +1,6 @@
-<?php include_once 'includes/header.php'; ?>
+<?php include_once 'includes/header.php';
+
+?>
 
 <!-- Best seling image and content -->
 <div class="bestselling">
