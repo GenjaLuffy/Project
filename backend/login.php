@@ -63,20 +63,16 @@ if (isset($_POST['login'])) {
         echo '<script>alert("Invalid Email")</script>';
     }
 }
-
 ?>
-
-<?php include_once 'includes/header.php'; ?>
-
-
+<?php
+require_once 'includes/header.php';
+?>
 <!--Login start-->
 <section class="login-page">
     <div class="container">
         <div class="wrapper" id="wrapper">
             <div class="form-box login">
-                <span class="icon-close">
-                    <ion-icon name="close-outline"></ion-icon>
-                </span>
+
                 <h2>Login</h2>
                 <form action="#" method="post">
                     <div class=" input-box">
@@ -110,9 +106,6 @@ if (isset($_POST['login'])) {
             </div>
             <!--Register Start-->
             <div class="form-box register">
-                <span class="icon-close">
-                    <ion-icon name="close-outline"></ion-icon>
-                </span>
                 <h2>Registration</h2>
                 <form action="#" method="post" enctype="multipart/form-data">
                     <div class="usernames">
@@ -189,3 +182,4 @@ if (isset($_POST['login'])) {
 </section>
 
 <?php include_once 'includes/footer.php'; ?>
+>>>>>>> cff808e476c7eec9aa42627a2891f1f30a3a9ef7
