@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+require_once 'functions.php';
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -29,17 +34,28 @@ session_start();
                     <ul>
                         <li><a href="index.php">Home</a></li>
                         <li><a href="#">Search</a></li>
+
+                        <?php
+
+
+
+                        if (is_admin()): ?>
+                            <li><a href="admin.php">Dashboard</a></li>
+                            <?php
+
+                        endif; ?>
+
                         <li><a href="#">Cart</a></li>
                         <li><a href="#">Contact</a></li>
                         <?php if (isset($_SESSION['user_id'])) {
 
-                        ?>
-                        <li><a href="./logout.php">Logout</a></li>
+                            ?>
+                            <li><a href="./logout.php">Logout</a></li>
                         <?php } else {
-                        ?>
-                        <li><a href="./login.php">Login</a></li>
+                            ?>
+                            <li><a href="./login.php">Login</a></li>
 
-                        <?php
+                            <?php
                         } ?>
 
                     </ul>

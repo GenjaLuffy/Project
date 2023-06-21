@@ -1,4 +1,20 @@
-<?php include_once 'includes/header.php'; ?>
+<?php include_once 'includes/header.php';
+
+?>
+
+
+
+<?php
+
+
+
+if (!is_admin()):
+
+  header('Location: login.php');
+
+endif; ?>
+
+
 <!-- Add Product -->
 <div class="admin-container">
   <aside class="sidebar">
