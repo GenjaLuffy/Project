@@ -2,12 +2,17 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/admin.css" />
-    <link rel="stylesheet" href="assets/css/user.css">
+    <link rel="stylesheet" href="assets/css/user.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-******"
+      crossorigin="anonymous"
+    />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>User</title>
   </head>
   <body>
     <header class="site-header">
@@ -16,8 +21,8 @@
           <img src="./assets/images/LOGO.png" class="sitebrand" alt="" />
           <nav>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Profile</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="profile.html">Profile</a></li>
               <li><a href="./loginin.html">LogIn</a></li>
             </ul>
           </nav>
@@ -25,70 +30,72 @@
       </div>
     </header>
 
-    
     <div class="admin-container">
       <aside class="sidebar">
         <ul class="admin-links">
           <li>
-            <a href="#"><span>icon</span>Dashboard</a>
+            <a href="admin.html"
+              ><span><i class="fas fa-chart-line"></i></span>Dashboard</a
+            >
           </li>
           <li>
-            <a href="#"><span>icon</span>User</a>
+            <a href="user.html"
+              ><span><i class="fas fa-user"></i></span>User</a
+            >
           </li>
           <li>
-            <a href="#"><span>icon</span>Product</a>
+            <a href="#"
+              ><span><i class="fas fa-box"></i></span>Product</a
+            >
             <ul class="sub-admin-links">
               <li>
-                <a href="#"><span>icon</span>Products</a>
+                <a href="#"
+                  ><span><i class="fas fa-box-open"></i></span>Products</a
+                >
               </li>
               <li>
-                <a href="#"><span>icon</span>Add Product</a>
+                <a href="#"
+                  ><span><i class="fas fa-plus"></i></span>Add Product</a
+                >
               </li>
-              <li> 
-                <a href="#"><span>icon</span>Product Category</a>
+              <li>
+                <a href="#"
+                  ><span><i class="fas fa-list-alt"></i></span>Product
+                  Category</a
+                >
               </li>
             </ul>
           </li>
           <li>
-            <a href="#"><span>icon</span>Settings</a>
+            <a href="#"
+              ><span><i class="fas fa-cog"></i></span>Settings</a
+            >
           </li>
           <li>
-            <a href="#"><span>icon</span>Logout</a>
+            <a href="#"
+              ><span><i class="fas fa-sign-out-alt"></i></span>Logout</a
+            >
           </li>
         </ul>
       </aside>
-      <div class="admin-content"></div>
-    </div>
-    
-    <div class="form_container">
-      <div class="form-control">
-        <div class="formh">
-          <h1>User</h1>
-          <form id="add-product-form">
-            <!-- <input type="text" id="Productname" name="Productname" > --> 
-            <div class="adminp">
-            <form>
-              
-              <table>
-                <thead>
-                  <tr>
-                    <th>Username</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Role</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                  </tr>
-                </tbody>
-              </table>
 
-          </form>
+      <div class="user-content">
+        <div class="user">
+          <div class="userdetail-content">
+            <form>
+              <table class="usertable">
+                <thead>
+                  <th>S.no.</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Role</th>
+                </thead>
+              </table>
+            </form>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
-    </form>
 
     <footer class="site-footer">
       <div class="container">
