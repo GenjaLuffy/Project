@@ -63,14 +63,10 @@ if (isset($_POST['login'])) {
         echo '<script>alert("Invalid Email")</script>';
     }
 }
-
-require_once 'includes/header.php';
-
-
 ?>
-
-
-
+<?php
+require_once 'includes/header.php';
+?>
 <!--Login start-->
 <section class="login-page">
     <div class="container">
@@ -186,3 +182,4 @@ require_once 'includes/header.php';
 </section>
 
 <?php include_once 'includes/footer.php'; ?>
+>>>>>>> cff808e476c7eec9aa42627a2891f1f30a3a9ef7
