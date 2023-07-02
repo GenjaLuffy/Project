@@ -1,0 +1,82 @@
+.admin-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  min-height: 80vh;
+}
+.admin-container > * {
+  padding: 20px;
+}
+.admin-container .sidebar {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+}
+.admin-container .user-content {
+  grid-column: span 3;
+}
+.admin-links,
+.sub-admin-links {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+.admin-links {
+  height: 100%;
+}
+.admin-links > li:last-child {
+  margin-top: auto;
+}
+.sub-admin-links {
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+.admin-links a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+.admin-links a:hover {
+  text-decoration: underline;
+}
+
+.admin-container {
+  display: flex;
+}
+
+.sidebar {
+  width: 350px;
+  background-color: #f1f1f1;
+  padding: 20px;
+  margin: 20px 5px;
+}
+
+.user-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.user {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  height: 100%;
+}
+
+.user-content {
+  font-size: 16px;
+  line-height: 1.5;
+  color: white;
+  font-size: 1.5em;
+  width: 100%;
+}
+.usertable {
+  width: 100%;
+}
+.tablebody{
+  height: 100%;
+}

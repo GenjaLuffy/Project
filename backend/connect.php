@@ -1,12 +1,7 @@
 <?php
 
-$con=new mysqli('localhost','root','','user_account');
+$con = new mysqli('localhost', 'root', '', 'user_account');
 
-if(!$con){
+if (!$con) {
     die(mysqli_error($con));
 }
-
-
-
-
-?>

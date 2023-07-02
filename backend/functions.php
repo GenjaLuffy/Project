@@ -27,3 +27,12 @@ function is_admin()
 
     return false;
 }
+
+
+function is_login()
+{
+    if (!isset($_SESSION['user_id']))
+        return false;
+
+    return true;
+}

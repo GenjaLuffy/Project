@@ -6,6 +6,7 @@ CREATE TABLE `user_info` (
   `Email` varchar(255) NOT NULL,
   `Password` varchar(255) NOT NULL,
   `Confirm_Password` varchar(255) NOT NULL,
+  `userimage` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`)
 );
 
