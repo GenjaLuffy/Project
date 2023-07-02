@@ -1,68 +1,82 @@
-body {
-  background-image: url(../images/background.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+.admin-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  min-height: 80vh;
 }
-
-h1 {
+.admin-container > * {
   padding: 20px;
-  text-align: left;
 }
-h2 {
-  margin: 0;
+.admin-container .sidebar {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
 }
-button {
-  float: right;
+.admin-container .user-content {
+  grid-column: span 3;
 }
-form {
-  margin: 0 auto;
+.admin-links,
+.sub-admin-links {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
 }
-
-.formh {
-  text-align: center;
-  height: 100vh;
+.admin-links {
+  height: 100%;
 }
-.form-control {
-  padding: 60px 0;
-  margin: 0 25px 25px 25px;
-  /* margin-bottom: 15px; */
-  border-radius: 25px;
-  /* display: flex;  */
-  justify-content: center;
-  align-items: center;
-  width: 80rem;
-  margin-top: 20px;
-  background-color: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+.admin-links > li:last-child {
+  margin-top: auto;
 }
-input[type="text"] {
-  width: 100%;
-  padding: 10px 15px;
-  margin: 10px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-input[type="submit"] {
-  background-color: lightgreen;
-  color: white;
-  padding: 10px 15px;
-  margin: 10px 0;
-  border: none;
-  cursor: pointer;
-  width: 30%;
-}
-table {
-  width: 100%;
-  border-collapse: collapse;
+.sub-admin-links {
   margin-top: 10px;
+  margin-left: 15px;
 }
-th {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
+
+.admin-links a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+.admin-links a:hover {
+  text-decoration: underline;
+}
+
+.admin-container {
+  display: flex;
+}
+
+.sidebar {
+  width: 350px;
+  background-color: #f1f1f1;
+  padding: 20px;
+  margin: 20px 5px;
+}
+
+.user-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.user {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  height: 100%;
+}
+
+.user-content {
+  font-size: 16px;
+  line-height: 1.5;
+  color: white;
+  font-size: 1.5em;
+  width: 100%;
+}
+.usertable {
+  width: 100%;
+}
+.tablebody{
+  height: 100%;
 }
