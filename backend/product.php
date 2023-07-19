@@ -1,29 +1,13 @@
-<?php include_once 'includes/header.php';
+<?php include_once 'includes/header.php'; ?>
 
-?>
-
-
-
-<?php
-
-
-
-if (!is_admin()) :
-
-  header('Location: login.php');
-
-endif; ?>
-
-
-<!-- Add Product -->
 <div class="admin-container">
     <aside class="sidebar">
         <ul class="admin-links">
             <li>
-                <a href="#"><span><i class="fas fa-chart-line"></i></span>Dashboard</a>
+                <a href="admin.php"><span><i class="fas fa-chart-line"></i></span>Dashboard</a>
             </li>
             <li>
-                <a href="#"><span><i class="fas fa-user"></i></span>User</a>
+                <a href="user.php"><span><i class="fas fa-user"></i></span>User</a>
             </li>
             <li>
                 <a href="#"><span><i class="fas fa-box"></i></span>Product</a>
@@ -44,24 +28,27 @@ endif; ?>
                 <a href="#"><span><i class="fas fa-cog"></i></span>Settings</a>
             </li>
             <li>
-                <a href="#"><span><i class="fas fa-sign-out-alt"></i></span>Logout</a>
+                <a href="logout.php "><span><i class="fas fa-sign-out-alt"></i></span>Logout</a>
             </li>
         </ul>
     </aside>
-    <div class="admin-content">
-        <div class="dashboard">
-            <h2 class="dashboard-title">Dashboard</h2>
-            <div class="dashboard-content">
-                <p>Welcome to the admin dashboard! You can manage your website here.</p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    vestibulum, velit id rutrum feugiat, sem urna volutpat enim, a
-                    interdum ipsum orci sed dui.
-                </p>
+
+    <div class="pro-content">
+        <div class="pro">
+            <div class="prodetail-content">
+                <form>
+                    <table class="protable">
+                        <thead>
+                            <th>S.no.</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Date</th>
+                        </thead>
+                    </table>
+                </form>
             </div>
         </div>
     </div>
-</div>
 </div>
 
 <?php include_once 'includes/footer.php'; ?>

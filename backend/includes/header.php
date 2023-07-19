@@ -19,6 +19,9 @@ require_once 'functions.php';
     <link rel="stylesheet" href="assets/css/moreproduct.css" />
     <link rel="stylesheet" href="./assets/css/profile.css" />
     <link rel="stylesheet" href="assets/css/singleitem.css" />
+    <link rel="stylesheet" href="assets/css/product.css">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/user.css" />
     <meta charset=" UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -39,9 +42,9 @@ require_once 'functions.php';
 
 
 
-                        if (is_admin()): ?>
-                            <li><a href="admin.php">Dashboard</a></li>
-                            <?php
+                        if (is_admin()) : ?>
+                        <li><a href="admin.php">Dashboard</a></li>
+                        <?php
 
                         endif; ?>
 
@@ -49,13 +52,13 @@ require_once 'functions.php';
                         <li><a href="#">Contact</a></li>
                         <?php if (isset($_SESSION['user_id'])) {
 
-                            ?>
-                            <li><a href="./logout.php">Logout</a></li>
+                        ?>
+                        <li><a href="./logout.php">Logout</a></li>
                         <?php } else {
-                            ?>
-                            <li><a href="./login.php">Login</a></li>
+                        ?>
+                        <li><a href="./login.php">Login</a></li>
 
-                            <?php
+                        <?php
                         } ?>
 
                     </ul>

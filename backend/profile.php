@@ -1,23 +1,34 @@
 <?php
+include 'functions.php';
+if (!is_login()) :
+
+    header('Location: login.php');
+
+endif; ?>
+
+<?php
 require 'connect.php';
 function  get_user_image()
 {
     global $con;
+    session_start();
 
-    $statement = $con->prepare("SELECT * FROM `user-info` WHERE ID = ? ");
+    $statement = $con->prepare("SELECT * FROM `user_info` WHERE ID = ? ");
     $statement->bind_param('i', $_SESSION['user_id']);
 
     if ($statement->execute()) {
         $result = $statement->get_result();
         $data =  $result->fetch_all(MYSQLI_ASSOC);
     }
+    session_destroy();
 
     return $data;
 }
 
 $user_data = get_user_image();
+
 ?>
-<?php include_once 'includes/header.php'; ?>
+<?php include 'includes/header.php'; ?>
 <!-- start of profile detail  -->
 <div class="profile-detail">
     <div class="container">
