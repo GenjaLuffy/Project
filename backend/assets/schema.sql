@@ -50,9 +50,10 @@ CREATE TABLE items (
   region VARCHAR(255) NOT NULL,
   publisher VARCHAR(255) NOT NULL,
   developer VARCHAR(255) NOT NULL,
-  genres VARCHAR(255) NOT NULL
+  genres VARCHAR(255) NOT NULL,
+  image_path VARCHAR(255) NOT NULL
 );
 
 -- Insert data into the items table
-INSERT INTO items (item_name, delivery_mode, delivery_time, platform, region, publisher, developer, genres)
-VALUES ('Mobile Legend Diamonds', 'VIA UID and Username', 30, 'Android, IOS', 'Global', 'Moontoon', 'Moontoon', 'MMO');
+INSERT INTO items (item_name, delivery_mode, delivery_time, platform, region, publisher, developer, genres, image_path)
+VALUES ('Mobile Legend Diamonds', 'VIA UID and Username', 30, 'Android, IOS', 'Global', 'Moontoon', 'Moontoon', 'MMO', 'assets/images/img.jpg');
