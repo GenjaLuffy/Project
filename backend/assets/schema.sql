@@ -19,41 +19,41 @@ CREATE TABLE `user_roles` (
 );
 
 
--- For image
-CREATE TABLE items (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  item_name VARCHAR(255) NOT NULL,
-  image_path VARCHAR(255) NOT NULL
-);
-INSERT INTO items (item_name, image_path) VALUES ('PUBG Mobile UC', './assets/images/pubg_mobile_uc.jpg');
-INSERT INTO items (item_name, image_path) VALUES ('Mobile Legend Diamond', './assets/images/mobile_legend_diamond.jpg');
-INSERT INTO items (item_name, image_path) VALUES ('Free Fire Diamond', './assets/images/free_fire_diamond.jpg');
-INSERT INTO items (item_name, image_path) VALUES ('Apex Legend Coins', './assets/images/apex_legend_coins.jpg');
--- Add more INSERT statements for each item
+-- -- For image
+-- CREATE TABLE items (
+--   id INT PRIMARY KEY AUTO_INCREMENT,
+--   item_name VARCHAR(255) NOT NULL,
+--   image_path VARCHAR(255) NOT NULL
+-- );
+-- INSERT INTO items (item_name, image_path) VALUES ('PUBG Mobile UC', './assets/images/pubg_mobile_uc.jpg');
+-- INSERT INTO items (item_name, image_path) VALUES ('Mobile Legend Diamond', './assets/images/mobile_legend_diamond.jpg');
+-- INSERT INTO items (item_name, image_path) VALUES ('Free Fire Diamond', './assets/images/free_fire_diamond.jpg');
+-- INSERT INTO items (item_name, image_path) VALUES ('Apex Legend Coins', './assets/images/apex_legend_coins.jpg');
+-- -- Add more INSERT statements for each item
 
 
--- SIngle item
+-- -- SIngle item
 
--- Create the database
-CREATE DATABASE single_item;
+-- -- Create the database
+-- CREATE DATABASE single_item;
 
--- Switch to the newly created database
-USE your_database_name;
+-- -- Switch to the newly created database
+-- USE your_database_name;
 
--- Create the items table
-CREATE TABLE items (
-  id INT PRIMARY KEY AUTO_INCREMENT,
-  item_name VARCHAR(255) NOT NULL,
-  delivery_mode VARCHAR(255) NOT NULL,
-  delivery_time INT NOT NULL,
-  platform VARCHAR(255) NOT NULL,
-  region VARCHAR(255) NOT NULL,
-  publisher VARCHAR(255) NOT NULL,
-  developer VARCHAR(255) NOT NULL,
-  genres VARCHAR(255) NOT NULL,
-  image_path VARCHAR(255) NOT NULL
-);
+-- -- Create the items table
+-- CREATE TABLE items (
+--   id INT PRIMARY KEY AUTO_INCREMENT,
+--   item_name VARCHAR(255) NOT NULL,
+--   delivery_mode VARCHAR(255) NOT NULL,
+--   delivery_time INT NOT NULL,
+--   platform VARCHAR(255) NOT NULL,
+--   region VARCHAR(255) NOT NULL,
+--   publisher VARCHAR(255) NOT NULL,
+--   developer VARCHAR(255) NOT NULL,
+--   genres VARCHAR(255) NOT NULL,
+--   image_path VARCHAR(255) NOT NULL
+-- );
 
--- Insert data into the items table
-INSERT INTO items (item_name, delivery_mode, delivery_time, platform, region, publisher, developer, genres, image_path)
-VALUES ('Mobile Legend Diamonds', 'VIA UID and Username', 30, 'Android, IOS', 'Global', 'Moontoon', 'Moontoon', 'MMO', 'assets/images/img.jpg');
+-- -- Insert data into the items table
+-- INSERT INTO items (item_name, delivery_mode, delivery_time, platform, region, publisher, developer, genres, image_path)
+-- VALUES ('Mobile Legend Diamonds', 'VIA UID and Username', 30, 'Android, IOS', 'Global', 'Moontoon', 'Moontoon', 'MMO', 'assets/images/img.jpg');
