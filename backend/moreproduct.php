@@ -1,4 +1,16 @@
 <?php include_once 'includes/header.php'; ?>
+<?php include 'connect.php'; ?>
+
+
+
+
+
+<?php
+$sql = "SELECT * FROM items";
+$result = mysqli_query($con, $sql);
+?>
+
+
 
 
 <div class="mobilegame">
@@ -7,46 +19,23 @@
             <h1 class="mobilegame-heading">Mobile Games</h1>
         </div>
 
+
         <div class="img-wrap">
-            <div class="mobilegame-content">
-                <img src="./assets/images/img.jpg" alt="" />
-                <h5>Apex Legend</h5>
-            </div>
 
-            <div class="mobilegame-content">
-                <img src="./assets/images/img.jpg" alt="" />
-                <h5>Mobile legend</h5>
-            </div>
+            <?php
+            // Display data in HTML
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo '<div class="best-content">';
+                    echo '<img src="' . $row['image_path'] . '" alt="' . $row['item_name'] . '" />';
+                    echo '<h5>' . $row['item_name'] . '</h5>';
+                    echo '</div>';
+                }
+            } else {
+                echo "No products found.";
+            }
 
-            <div class="mobilegame-content">
-                <img src="./assets/images/img.jpg" alt="" />
-                <h5>Pubg Mobile</h5>
-            </div>
-
-            <div class="mobilegame-content">
-                <img src="./assets/images/img.jpg" alt="" />
-                <h5>Free Fire</h5>
-            </div>
-
-            <div class="mobilegame-content">
-                <img src="./assets/images/img.jpg" alt="" />
-                <h5>Genshin Impact</h5>
-            </div>
-
-            <div class="mobilegame-content">
-                <img src="./assets/images/img.jpg" alt="" />
-                <h5>E-football</h5>
-            </div>
-
-            <div class="mobilegame-content">
-                <img src="./assets/images/img.jpg" alt="" />
-                <h5>DLS 2023</h5>
-            </div>
-
-            <div class="mobilegame-content">
-                <img src="./assets/images/img.jpg" alt="" />
-                <h5>COD</h5>
-            </div>
+            ?>
         </div>
     </div>
 </div>
@@ -57,8 +46,28 @@
             <h1 class="mobilegame-heading">Subscription</h1>
         </div>
 
+
+
+        <?php
+        $sql = "SELECT * FROM media";
+        $result = mysqli_query($con, $sql);
+        ?>
+
         <div class="img-wrap">
-            <div class="mobilegame-content">
+            <?php
+            // Display data in HTML
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo '<div class="best-content">';
+                    echo '<img src="' . $row['image_path'] . '" alt="' . $row['item_name'] . '" />';
+                    echo '<h5>' . $row['item_name'] . '</h5>';
+                    echo '</div>';
+                }
+            } else {
+                echo "No products found.";
+            }
+            ?>
+            <!-- <div class="mobilegame-content">
                 <img src="./assets/images/img.jpg" alt="" />
                 <h5>Netflix</h5>
             </div>
@@ -76,22 +85,7 @@
             <div class="mobilegame-content">
                 <img src="./assets/images/img.jpg" alt="" />
                 <h5>U-turrent</h5>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="mobilegame">
-    <div class="mobilegame-container">
-        <div class="mobile-game">
-            <h1 class="mobilegame-heading">TikTok Coin</h1>
-        </div>
-
-        <div class="img-wrap">
-            <div class="mobilegame-content">
-                <img src="./assets/images/img.jpg" alt="" />
-                <h5>Tik-tok Coin</h5>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

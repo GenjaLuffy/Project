@@ -20,16 +20,13 @@ CREATE TABLE `user_roles` (
 
 
 -- -- For image
--- CREATE TABLE items (
---   id INT PRIMARY KEY AUTO_INCREMENT,
---   item_name VARCHAR(255) NOT NULL,
---   image_path VARCHAR(255) NOT NULL
--- );
--- INSERT INTO items (item_name, image_path) VALUES ('PUBG Mobile UC', './assets/images/pubg_mobile_uc.jpg');
--- INSERT INTO items (item_name, image_path) VALUES ('Mobile Legend Diamond', './assets/images/mobile_legend_diamond.jpg');
--- INSERT INTO items (item_name, image_path) VALUES ('Free Fire Diamond', './assets/images/free_fire_diamond.jpg');
--- INSERT INTO items (item_name, image_path) VALUES ('Apex Legend Coins', './assets/images/apex_legend_coins.jpg');
--- -- Add more INSERT statements for each item
+CREATE TABLE items (
+ id INT PRIMARY KEY AUTO_INCREMENT,
+   item_name VARCHAR(255) NOT NULL,
+   image_path VARCHAR(255) NOT NULL
+ );
+-- INSERT INTO items (item_name, image_path) VALUES ('PUBG Mobile UC', './assets/images/Pubg.png');
+
 
 
 -- -- SIngle item

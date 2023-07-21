@@ -1,23 +1,11 @@
-<!-- <?php include_once 'connect.php';
-$servername = "localhost";
-$username = "root"; // Replace with your database username
-$password = ""; // Replace with your database password
-$dbname = "user_account"; // Replace with your database name
-
-// Create a database connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-// Check if the connection was successful
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-} ?> -->
-
-
-<?php include_once 'includes/header.php';
-
-?>
+<?php include_once 'includes/header.php';?>
+<?php include 'connect.php'; ?>
 
 <!-- Best seling image and content -->
+<?php
+$sql = "SELECT * FROM items LIMIT 4";
+$result = mysqli_query($con, $sql);
+?>
 <div class="bestselling">
     <div class="bestselling-container">
         <div class="best-selling">
@@ -26,37 +14,52 @@ if (!$conn) {
         </div>
 
         <div class="img-wrap">
-            <div class="best-content">
-                <img src="./assets/images/img.jpg" alt="PUBG Mobile" />
-                <h5>PUBG Mobile UC</h5>
-            </div>
-
-            <div class="best-content">
-                <img src="./assets/images/img.jpg" alt="Mobile Legend" />
-                <h5>Mobile Legend Diamond</h5>
-            </div>
-
-            <div class="best-content">
-                <img src="./assets/images/img.jpg" alt="Free fire" />
-                <h5>Free Fire Daimond</h5>
-            </div>
-
-            <div class="best-content">
-                <img src="./assets/images/img.jpg" alt="Apex Legend" />
-                <h5>Apex Legend Coins</h5>
-            </div>
+            <?php
+            // Display data in HTML
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo '<div class="best-content">';
+                    echo '<img src="' . $row['image_path'] . '" alt="' . $row['item_name'] . '" />';
+                    echo '<h5>' . $row['item_name'] . '</h5>';
+                    echo '</div>';
+                }
+            } else {
+                echo "No products found.";
+            }
+            ?>
         </div>
     </div>
 </div>
 <div class="bestselling">
     <div class="bestselling-container">
+        <?php
+        $sql = "SELECT * FROM items LIMIT 8";
+        $result = mysqli_query($con, $sql);
+        ?>
+
         <div class="best-selling">
             <h1 class="bestselling-heading">Products</h1>
             <ion-icon name="bag-handle-outline"></ion-icon>
         </div>
 
         <div class="img-wrap">
-            <div class="best-content">
+            <?php
+            // Display data in HTML
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo '<div class="best-content">';
+                    echo '<img src="' . $row['image_path'] . '" alt="' . $row['item_name'] . '" />';
+                    echo '<h5>' . $row['item_name'] . '</h5>';
+                    echo '</div>';
+                }
+            } else {
+                echo "No products found.";
+            }
+
+            // Close the database connection
+            mysqli_close($con);
+            ?>
+            <!-- <div class="best-content">
                 <img src="./assets/images/img.jpg" alt="PUBG Mobile" />
                 <h5>PUBG Mobile UC</h5>
             </div>
@@ -112,7 +115,7 @@ if (!$conn) {
             <div class="best-content">
                 <img src="./assets/images/img.jpg" alt="Apex Legend" />
                 <h5>Apex Legend Coins</h5>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>
