@@ -32,30 +32,29 @@ h5 {
   padding-top: 10px;
 }
 
-.mobilegame-container{
+.mobilegame-container {
   width: 1200px;
-  margin: 100px auto;
+  margin: 30px auto;
   border: 2.5px solid rgba(255, 255, 255, 0.3);
   padding: 50px 20px;
   backdrop-filter: blur(10px);
   border-radius: 50px;
 }
 
-.mobilegame{
+.mobilegame {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 30px;
 }
 
-.mobilegame-content h5{
+.mobilegame-content h5 {
   padding: 10px;
   backdrop-filter: blur(10px);
 }
 
-.mobilegame-heading{
+.mobilegame-heading {
   padding-left: 70px;
 }
-
 
 /* End of More product page */

@@ -34,7 +34,7 @@ h5 {
 
 .mobilegame-container {
   width: 1200px;
-  margin: 100px auto;
+  margin: 30px auto;
   border: 2.5px solid rgba(255, 255, 255, 0.3);
   padding: 50px 20px;
   backdrop-filter: blur(10px);

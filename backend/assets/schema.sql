@@ -17,3 +17,40 @@ CREATE TABLE `user_roles` (
   PRIMARY KEY (`role_id`),
   FOREIGN KEY (`user_id`) REFERENCES `user_info` (`ID`)
 );
+
+
+-- -- For image
+CREATE TABLE items (
+ id INT PRIMARY KEY AUTO_INCREMENT,
+   item_name VARCHAR(255) NOT NULL,
+   image_path VARCHAR(255) NOT NULL
+ );
+-- INSERT INTO items (item_name, image_path) VALUES ('PUBG Mobile UC', './assets/images/Pubg.png');
+
+
+
+-- -- SIngle item
+
+-- -- Create the database
+-- CREATE DATABASE single_item;
+
+-- -- Switch to the newly created database
+-- USE your_database_name;
+
+-- -- Create the items table
+-- CREATE TABLE items (
+--   id INT PRIMARY KEY AUTO_INCREMENT,
+--   item_name VARCHAR(255) NOT NULL,
+--   delivery_mode VARCHAR(255) NOT NULL,
+--   delivery_time INT NOT NULL,
+--   platform VARCHAR(255) NOT NULL,
+--   region VARCHAR(255) NOT NULL,
+--   publisher VARCHAR(255) NOT NULL,
+--   developer VARCHAR(255) NOT NULL,
+--   genres VARCHAR(255) NOT NULL,
+--   image_path VARCHAR(255) NOT NULL
+-- );
+
+-- -- Insert data into the items table
+-- INSERT INTO items (item_name, delivery_mode, delivery_time, platform, region, publisher, developer, genres, image_path)
+-- VALUES ('Mobile Legend Diamonds', 'VIA UID and Username', 30, 'Android, IOS', 'Global', 'Moontoon', 'Moontoon', 'MMO', 'assets/images/img.jpg');
