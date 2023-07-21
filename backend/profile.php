@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'functions.php';
 if (!is_login()) :
 
@@ -11,8 +12,6 @@ require 'connect.php';
 function  get_user_image()
 {
     global $con;
-    session_start();
-
     $statement = $con->prepare("SELECT * FROM `user_info` WHERE ID = ? ");
     $statement->bind_param('i', $_SESSION['user_id']);
 
