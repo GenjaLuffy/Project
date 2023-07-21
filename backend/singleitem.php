@@ -1,31 +1,5 @@
-<?php
-// Database configuration
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "user_account";
-
-// Create a database connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-// Check if the connection was successful
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-// Fetch data for the single item from the database
-$itemName = "Mobile Legend Diamonds"; // Replace with the actual item name
-$sql = "SELECT * FROM items WHERE item_name='$itemName'";
-$result = mysqli_query($conn, $sql);
-$itemData = mysqli_fetch_assoc($result);
-
-// Close the database connection
-mysqli_close($conn);
-?>
-
-
-
 <?php include_once 'includes/header.php'; ?>
+<?php include 'connect.php'; ?>
 
 <!--Start of single items-->
 
@@ -55,8 +29,9 @@ mysqli_close($conn);
                         <label for="productAmount"></label>
                         <select name="productAmount" id="productAmount" class="productAmount">
                             <option value="" selected>Select Amount</option>
-                            <option value="a">A</option>
-                            <option value="b">B</option>
+                            <option value="a">Diamond</option>
+                            <option value="b">Uc</option>
+                            <option value="c">Coin</option>
                         </select>
                         <div class="gameuserid">
                             <input type="text" name="userid" id="userid" placeholder="Enter User ID" />
