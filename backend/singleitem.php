@@ -1,4 +1,5 @@
 <?php include_once 'includes/header.php'; ?>
+<?php include 'connect.php'; ?>
 
 <!--Start of single items-->
 
@@ -28,8 +29,9 @@
                         <label for="productAmount"></label>
                         <select name="productAmount" id="productAmount" class="productAmount">
                             <option value="" selected>Select Amount</option>
-                            <option value="a">A</option>
-                            <option value="b">B</option>
+                            <option value="a">Diamond</option>
+                            <option value="b">Uc</option>
+                            <option value="c">Coin</option>
                         </select>
                         <div class="gameuserid">
                             <input type="text" name="userid" id="userid" placeholder="Enter User ID" />

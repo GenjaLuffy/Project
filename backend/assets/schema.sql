@@ -29,10 +29,7 @@ CREATE TABLE items (
 
 
 
--- -- SIngle item
-
--- -- Create the database
--- CREATE DATABASE single_item;
+-- -- SIngle item0
 
 -- -- Switch to the newly created database
 -- USE your_database_name;
