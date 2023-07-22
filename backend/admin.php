@@ -10,7 +10,7 @@
 
 if (!is_admin()) :
 
-  header('Location: login.php');
+    header('Location: login.php');
 
 endif; ?>
 
