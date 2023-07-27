@@ -20,7 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Perform validation if needed
 
     // Insert the data into the database
-    $sql = "INSERT INTO single item (item_name, delivery_mode, delivery_time, platform, region, publisher, developer, genres, product_amount, user_id, zone_id, quantity, image_path) VALUES ('$item_name', '$delivery_mode', '$delivery_time', '$platform', '$region', '$publisher', '$developer', '$genres', '$product_amount', '$user_id', '$zone_id', $quantity, '$image_path')";
+    $sql = "INSERT INTO `single item` (item_name, delivery_mode, delivery_time, platform, region, publisher, developer, genres, product_amount, user_id, zone_id, quantity, image_path) 
+            VALUES ('$item_name', '$delivery_mode', '$delivery_time', '$platform', '$region', '$publisher', '$developer', '$genres', '$product_amount', '$user_id', '$zone_id', $quantity, '$image_path')";
+
 
     if (mysqli_query($con, $sql)) {
         echo "Data inserted successfully!";
