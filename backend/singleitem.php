@@ -1,37 +1,71 @@
+<?php include_once 'includes/header.php'; ?>
 <?php include 'connect.php'; ?>
 
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve form data
-    $item_name = $_POST["item_name"];
-    $delivery_mode = $_POST["delivery_mode"];
-    $delivery_time = $_POST["delivery_time"];
-    $platform = $_POST["platform"];
-    $region = $_POST["region"];
-    $publisher = $_POST["publisher"];
-    $developer = $_POST["developer"];
-    $genres = $_POST["genres"];
-    $product_amount = $_POST["productAmount"];
-    $user_id = $_POST["user_id"];
-    $zone_id = $_POST["zone_id"];
-    $quantity = $_POST["qty"];
-    $image_path = "path_to_image"; // You can modify this to store the actual image path in the database
+if (isset($_GET['item_id'])) {
+    // Retrieve the item ID from the URL parameter
+    $item_id = $_GET['item_id'];
 
-    // Perform validation if needed
+    // Retrieve data from the `single_item` table for the selected item
+    $sql = "SELECT * FROM single_item WHERE id = $item_id";
+    $result = mysqli_query($con, $sql);
 
-    // Insert the data into the database
-    $sql = "INSERT INTO `single item` (item_name, delivery_mode, delivery_time, platform, region, publisher, developer, genres, product_amount, user_id, zone_id, quantity, image_path) 
-            VALUES ('$item_name', '$delivery_mode', '$delivery_time', '$platform', '$region', '$publisher', '$developer', '$genres', '$product_amount', '$user_id', '$zone_id', $quantity, '$image_path')";
-
-    if (mysqli_query($con, $sql)) {
-        echo "Data inserted successfully!";
+    // Display data in HTML
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            // Display the detailed information of the item
+            echo '<div class="single-item-container">';
+            echo '<section class="single-wrapper">';
+            echo '<div class="container">';
+            echo '<div class="grid column-2 gap-2">';
+            echo '<div class="grid-item">';
+            echo '<img src="' . $row['image_path'] . '" alt="' . $row['item_name'] . '" />';
+            echo '</div>';
+            echo '<div class="grid-item">';
+            echo '<ul class="item-description">';
+            echo '<li>Delivery mode: ' . $row['delivery_mode'] . '</li>';
+            echo '<li>Delivery time: ' . $row['delivery_time'] . '</li>';
+            echo '<li>Platform: ' . $row['platform'] . '</li>';
+            echo '<li>Region: ' . $row['region'] . '</li>';
+            echo '<li>Publisher: ' . $row['publisher'] . '</li>';
+            echo '<li>Developer: ' . $row['developer'] . '</li>';
+            echo '<li>Genres: ' . $row['genres'] . '</li>';
+            echo '</ul>';
+            echo '<form action="submit_form.php" method="post">';
+            echo '<label for="productAmount"></label>';
+            echo '<select name="productAmount" id="productAmount" class="productAmount">';
+            echo '<option value="" selected>Select Amount</option>';
+            echo '<option value="a">Diamond</option>';
+            echo '<option value="b">Uc</option>';
+            echo '<option value="c">Coin</option>';
+            echo '</select>';
+            echo '<div class="gameuserid">';
+            echo '<input type="text" name="user_id" id="userid" placeholder="Enter User ID" />';
+            echo '</div>';
+            echo '<div class="gameuserid">';
+            echo '<input type="text" name="zone_id" id="zoneid" placeholder="Enter Zone ID" />';
+            echo '</div>';
+            echo '<div class="buy-button">';
+            echo '<input type="number" class="qty" value="1" name="qty" />';
+            echo '<button type="submit" class="btn-buy">';
+            echo 'BUY';
+            echo '<ion-icon name="cart-outline"></ion-icon>';
+            echo '</button>';
+            echo '</div>';
+            echo '</form>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            echo '</section>';
+            echo '</div>';
+        }
+   
     } else {
-        echo "Error: " . mysqli_error($con);
+        echo "Item not found.";
     }
 }
 ?>
 
-<?php include_once 'includes/header.php'; ?>
 
 <div class="page-header">
     <div class="container">
@@ -57,6 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <li>Genres: MMO</li>
                     </ul>
                     <form action="#" method="post">
+
                         <label for="productAmount"></label>
                         <select name="productAmount" id="productAmount" class="productAmount">
                             <option value="" selected>Select Amount</option>

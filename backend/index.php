@@ -21,8 +21,9 @@ $result = mysqli_query($con, $sql);
                     echo '<div class="best-content">';
                     ?>
                     <figure>
-
-                        <?php echo '<img src="' . $row['image_path'] . '" alt="' . $row['item_name'] . '" />'; ?>
+                        <a href="singleitem.php?item_id=<?php echo $row['id']; ?>">
+                        <img src="<?php echo $row['image_path']; ?>" alt="<?php echo $row['item_name']; ?>" />
+                        </a>
                     </figure>
                     <?php
                     echo '<h5>' . $row['item_name'] . '</h5>';
@@ -55,8 +56,9 @@ $result = mysqli_query($con, $sql);
                     echo '<div class="best-content">';
                     ?>
                     <figure>
-
-                        <?php echo '<img src="' . $row['image_path'] . '" alt="' . $row['item_name'] . '" />'; ?>
+                    <a href="singleitem.php?item_id=<?php echo $row['id']; ?>">
+                            <img src="<?php echo $row['image_path']; ?>" alt="<?php echo $row['item_name']; ?>" />
+                        </a>
                     </figure>
                     <?php
                     echo '<h5>' . $row['item_name'] . '</h5>';
