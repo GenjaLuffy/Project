@@ -32,7 +32,7 @@ endif; ?>
                         <a href="product.php"><span><i class="fas fa-box-open"></i></span>Products</a>
                     </li>
                     <li>
-                        <a href="#"><span><i class="fas fa-plus"></i></span>Add Product</a>
+                        <a href="addproduct.php"><span><i class="fas fa-plus"></i></span>Add Product</a>
                     </li>
                     <li>
                         <a href="#"><span><i class="fas fa-list-alt"></i></span>Product
