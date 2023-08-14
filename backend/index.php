@@ -19,12 +19,12 @@ $result = mysqli_query($con, $sql);
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="best-content">';
-                    ?>
-                    <figure>
+            ?>
+            <figure>
 
-                        <?php echo '<img src="' . $row['image_path'] . '" alt="' . $row['item_name'] . '" />'; ?>
-                    </figure>
-                    <?php
+                <?php echo '<img src="' . $row['image_path'] . '" alt="' . $row['item_name'] . '" />'; ?>
+            </figure>
+            <?php
                     echo '<h5>' . $row['item_name'] . '</h5>';
                     echo '</div>';
                 }
@@ -53,12 +53,11 @@ $result = mysqli_query($con, $sql);
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="best-content">';
-                    ?>
-                    <figure>
-
-                        <?php echo '<img src="' . $row['image_path'] . '" alt="' . $row['item_name'] . '" />'; ?>
-                    </figure>
-                    <?php
+            ?>
+            <figure>
+                <?php echo '<img src="' . $row['image_path'] . '" alt="' . $row['item_name'] . '" />'; ?>
+            </figure>
+            <?php
                     echo '<h5>' . $row['item_name'] . '</h5>';
                     echo '</div>';
                 }
