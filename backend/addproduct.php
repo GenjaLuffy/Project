@@ -5,7 +5,7 @@
 <?php
 
 $sql = "SELECT * FROM items";
-$result = mysqli_query($conn, $sql);
+$result = mysqli_query($con, $sql);
 
 ?>
 
