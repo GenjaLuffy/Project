@@ -1,6 +1,8 @@
 <?php
-global $db_pass;
 include 'connect.php';
+require_once 'includes/header.php';
+
+global $db_pass;
 if (isset($_POST['submit'])) {
     $First_name = mysqli_real_escape_string($con, $_POST['f_name']);
     $Last_name = mysqli_real_escape_string($con, $_POST['l_name']);
@@ -39,9 +41,7 @@ if (isset($_POST['submit'])) {
         }
     }
 }
-?>
-<?php
-include 'connect.php';
+
 if (isset($_POST['login'])) {
     $email = $_POST['lemail'];
     $password = $_POST['lpassword'];
@@ -52,7 +52,6 @@ if (isset($_POST['login'])) {
         $user_data = mysqli_fetch_assoc($query);
         $db_pass = $user_data['Password'];
         if ($db_pass == $password) {
-            session_start();
             $_SESSION['user_id'] = $user_data["ID"];
             echo '<script>alert("Login Successfully")</script>';
             header("Location: index.php");
@@ -64,9 +63,7 @@ if (isset($_POST['login'])) {
     }
 }
 ?>
-<?php
-require_once 'includes/header.php';
-?>
+
 <!--Login start-->
 <section class="login-page">
     <div class="container">

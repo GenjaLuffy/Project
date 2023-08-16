@@ -1,14 +1,13 @@
 <?php
-session_start();
-include 'functions.php';
+require 'connect.php';
+include 'includes/header.php';
+
 if (!is_login()) :
 
     header('Location: login.php');
 
-endif; ?>
+endif;
 
-<?php
-require 'connect.php';
 function  get_user_image()
 {
     global $con;
@@ -19,15 +18,12 @@ function  get_user_image()
         $result = $statement->get_result();
         $data =  $result->fetch_all(MYSQLI_ASSOC);
     }
-    session_destroy();
-
     return $data;
 }
 
 $user_data = get_user_image();
 
 ?>
-<?php include 'includes/header.php'; ?>
 <!-- start of profile detail  -->
 <div class="profile-detail">
     <div class="container">
