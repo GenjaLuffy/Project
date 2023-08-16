@@ -1,4 +1,12 @@
-<?php include_once 'includes/header.php'; ?>
+<?php include_once 'includes/header.php';
+
+global $con;
+$stmt = $con->prepare("SELECT * FROM orders");
+$stmt->execute();
+$result = $stmt->get_result();
+$orders = $result->fetch_all(MYSQLI_ASSOC);
+
+?>
 
 <div class="admin-container">
     <aside class="sidebar">
@@ -13,7 +21,7 @@
                 <a href="#"><span><i class="fas fa-box"></i></span>Product</a>
                 <ul class="sub-admin-links">
                     <li>
-                        <a href="product.php"><span><i class="fas fa-box-open"></i></span>Products</a>
+                        <a href="product.php"><span><i class="fas fa-box-open"></i></span>Orders</a>
                     </li>
                     <li>
                         <a href="#"><span><i class="fas fa-plus"></i></span>Add Product</a>
@@ -38,12 +46,24 @@
             <div class="prodetail-content">
                 <form>
                     <table class="protable">
-                        <thead>
-                            <th>S.no.</th>
+                        <tr>
+                            <th>ID</th>
                             <th>Name</th>
-                            <th>Price</th>
-                            <th>Date</th>
-                        </thead>
+                            <th>Product Name</th>
+                            <th>Details</th>
+                            <th>Qty</th>
+                            <th>Action</th>
+                        </tr>
+                        <?php foreach ($orders as $order) : ?>
+                            <tr>
+                                <td><?php echo $order['id']; ?></td>
+                                <td><?php echo get_user_name($order['customer_id']); ?></td>
+                                <td><?php echo get_product_name($order['product_id']); ?></td>
+                                <td><?php echo $order['product_detail']; ?></td>
+                                <td><?php echo $order['product_qty']; ?></td>
+                                <td><?php echo $order['status']; ?></td>
+                            </tr>
+                        <?php endforeach; ?>
                     </table>
                 </form>
             </div>

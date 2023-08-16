@@ -1,7 +1,31 @@
-<?php include_once 'includes/header.php'; ?>
-<?php include 'connect.php'; ?>
+<?php
+include_once 'includes/header.php';
+include 'connect.php';
+?>
 
 <?php
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $amount = $_POST['productAmount'];
+    $customer_id = get_user_id();
+    $product_id = $_GET['id'];
+    $user_id = $_POST['user_id'];
+    $zone_id = $_POST['zone_id'];
+    $qty = $_POST['qty'];
+    $product_name = get_product_name($product_id);
+    // echo $customer_id . "<br>";
+    // echo $product_id . "<br>";
+    // echo $product_name . "<br>";
+    // echo $user_id . "<br>";
+    // echo $amount . "<br>";
+    // echo $zone_id . "<br>";
+    // echo $qty;
+    global $con;
+    $stmt = $con->prepare("INSERT INTO orders(customer_id, user_id, product_id, product_detail, product_qty)VALUES(?,?,?,?,?)");
+    $stmt->bind_param("iiisi", $customer_id, $user_id, $product_id, $amount, $qty);
+    $stmt->execute();
+}
+
 if (isset($_GET['id'])) {
     // Retrieve the item ID from the URL parameter
     $item_id = $_GET['id'];
@@ -13,7 +37,7 @@ if (isset($_GET['id'])) {
     // Display data in HTML
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
-        ?>
+?>
         <div class="page-header">
             <div class="container">
                 <h2 class="page-title">
@@ -53,14 +77,14 @@ if (isset($_GET['id'])) {
                                 </li>
                             </ul>
                             <!-- Your form goes here -->
-                            <form action="#" method="post">
+                            <form method="post">
 
                                 <label for="productAmount"></label>
                                 <select name="productAmount" id="productAmount" class="productAmount">
                                     <option value="" selected>Select Amount</option>
-                                    <option value="a">Diamond</option>
-                                    <option value="b">Uc</option>
-                                    <option value="c">Coin</option>
+                                    <option value="Diamond">Diamond</option>
+                                    <option value="UC">Uc</option>
+                                    <option value="Coin">Coin</option>
                                 </select>
                                 <div class="gameuserid">
                                     <input type="text" name="user_id" id="userid" placeholder="Enter User ID" />
@@ -81,7 +105,7 @@ if (isset($_GET['id'])) {
                 </div>
             </section>
         </div>
-        <?php
+<?php
     } else {
         echo "Item not found.";
     }
