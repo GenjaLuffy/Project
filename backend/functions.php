@@ -2,6 +2,10 @@
 
 require_once 'connect.php';
 
+function get_base_directory(): string
+{
+    return '/' . basename(__DIR__);
+}
 
 function is_admin()
 {

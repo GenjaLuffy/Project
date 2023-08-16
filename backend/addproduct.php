@@ -13,7 +13,7 @@ $result = mysqli_query($con, $sql);
       <aside class="sidebar">
         <ul class="admin-links">
           <li>
-            <a href="admin.html"
+            <a href="admin.php"
               ><span><i class="fas fa-chart-line"></i></span>Dashboard</a
             >
           </li>
@@ -59,7 +59,7 @@ $result = mysqli_query($con, $sql);
       </aside>
       <div class="admin-content">
         <div class="dashboard">
-          <h2 class="dashboard-title">Dashboard</h2>
+          <h2 class="dashboard-title">Products</h2>
           <div class="dashboard-content">
            
 

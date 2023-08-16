@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'functions.php';
-if (!is_login()) :
+if (!is_login()):
 
     header('Location: login.php');
 
@@ -9,7 +9,7 @@ endif; ?>
 
 <?php
 require 'connect.php';
-function  get_user_image()
+function get_user_image()
 {
     global $con;
     $statement = $con->prepare("SELECT * FROM `user_info` WHERE ID = ? ");
@@ -17,7 +17,7 @@ function  get_user_image()
 
     if ($statement->execute()) {
         $result = $statement->get_result();
-        $data =  $result->fetch_all(MYSQLI_ASSOC);
+        $data = $result->fetch_all(MYSQLI_ASSOC);
     }
     session_destroy();
 
@@ -33,14 +33,14 @@ $user_data = get_user_image();
     <div class="container">
         <div class="profile-header">
             <h1>Profile</h1>
-            <?php if (isset($user_data[0]['userimage'])) : ?>
+            <?php if (isset($user_data[0]['userimage'])): ?>
                 <figure class="profile-avatar">
 
 
                     <img src="uploads/<?php echo $user_data[0]['userimage']; ?>" alt="" />
 
                 </figure>
-            <?php else : ?>
+            <?php else: ?>
                 <figure class="profile-avatar">
                     <img src="./assets/images/img.jpg" alt="">
                 </figure>
