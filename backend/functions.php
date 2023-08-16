@@ -1,12 +1,14 @@
 <?php
-
 require_once 'connect.php';
+<<<<<<< HEAD
 
 function get_base_directory(): string
 {
     return '/' . basename(__DIR__);
 }
 
+=======
+>>>>>>> 28d1ccfc6f5cb8c5da26bbfede302f01c52c1334
 function is_admin()
 {
     global $con;
@@ -25,12 +27,17 @@ function is_admin()
 
     return false;
 }
-
-
 function is_login()
 {
-    if (!isset($_SESSION['user_id']))
+    if (isset($_SESSION['user_id'])) :
+        return true;
+    else :
         return false;
+<<<<<<< HEAD
 
     return true;
 }
+=======
+    endif;
+}
+>>>>>>> 28d1ccfc6f5cb8c5da26bbfede302f01c52c1334

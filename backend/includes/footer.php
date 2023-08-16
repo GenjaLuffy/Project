@@ -8,9 +8,9 @@
                 <h2>PRODUCTS</h2>
                 <br />
                 <ul>
-                    <li class="footer-list"><a href="#">Top Up</a></li>
+                    <li class="footer-list"><a href="./moreproduct.php">Top Up</a></li>
                     <br />
-                    <li class="footer-list"><a href="#">Gift Cards</a></li>
+                    <li class="footer-list"><a href="./moreproduct.php">Gift Cards</a></li>
                 </ul>
             </div>
             <div class="footer-item">

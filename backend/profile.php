@@ -1,15 +1,26 @@
 <?php
+<<<<<<< HEAD
 session_start();
 include 'functions.php';
 if (!is_login()):
+=======
+require 'connect.php';
+include 'includes/header.php';
+
+if (!is_login()) :
+>>>>>>> 28d1ccfc6f5cb8c5da26bbfede302f01c52c1334
 
     header('Location: login.php');
 
-endif; ?>
+endif;
 
+<<<<<<< HEAD
 <?php
 require 'connect.php';
 function get_user_image()
+=======
+function  get_user_image()
+>>>>>>> 28d1ccfc6f5cb8c5da26bbfede302f01c52c1334
 {
     global $con;
     $statement = $con->prepare("SELECT * FROM `user_info` WHERE ID = ? ");
@@ -19,15 +30,12 @@ function get_user_image()
         $result = $statement->get_result();
         $data = $result->fetch_all(MYSQLI_ASSOC);
     }
-    session_destroy();
-
     return $data;
 }
 
 $user_data = get_user_image();
 
 ?>
-<?php include 'includes/header.php'; ?>
 <!-- start of profile detail  -->
 <div class="profile-detail">
     <div class="container">
