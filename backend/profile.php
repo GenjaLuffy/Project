@@ -1,26 +1,12 @@
 <?php
-<<<<<<< HEAD
-session_start();
-include 'functions.php';
-if (!is_login()):
-=======
 require 'connect.php';
 include 'includes/header.php';
 
-if (!is_login()) :
->>>>>>> 28d1ccfc6f5cb8c5da26bbfede302f01c52c1334
-
+if (!is_login()):
     header('Location: login.php');
-
 endif;
 
-<<<<<<< HEAD
-<?php
-require 'connect.php';
 function get_user_image()
-=======
-function  get_user_image()
->>>>>>> 28d1ccfc6f5cb8c5da26bbfede302f01c52c1334
 {
     global $con;
     $statement = $con->prepare("SELECT * FROM `user_info` WHERE ID = ? ");
