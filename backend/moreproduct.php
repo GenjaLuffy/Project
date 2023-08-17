@@ -103,14 +103,17 @@
             <h1 class="mobilegame-heading">Gift Card</h1>
         </div>
 
-
         <?php
-        $sql = "SELECT * FROM cards";
-        $result = mysqli_query($con, $sql);
-        ?>
+            $sql = "SELECT * FROM cards";
+            $result = mysqli_query($con, $sql);
+            ?>
 
         <div class="img-wrap">
 
+            <?php
+            $sql = "SELECT * FROM cards";
+            $result = mysqli_query($con, $sql);
+            ?>
             <?php
             // Display data in HTML
             if (mysqli_num_rows($result) > 0) {
@@ -119,7 +122,9 @@
                     ?>
                     <figure>
 
-                        <?php echo '<img src="' . $row['image_path'] . '" alt="' . $row['item_name'] . '" />'; ?>
+                        <a href="singleitem.php?cards_id=<?php echo $row['id']; ?>">
+                            <img src="<?php echo $row['image_path']; ?>" alt="<?php echo $row['item_name']; ?>" />
+                        </a>
                     </figure>
                     <?php
                     echo '<h5>' . $row['item_name'] . '</h5>';

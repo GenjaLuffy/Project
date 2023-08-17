@@ -9,7 +9,8 @@ session_start();
 <head>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/admin.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-******" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-******" crossorigin="anonymous" />
     <link rel="stylesheet" href="./assets/css/loginStyles.css" />
     <link rel="stylesheet" href="assets/css/moreproduct.css" />
     <link rel="stylesheet" href="./assets/css/profile.css" />
@@ -27,25 +28,27 @@ session_start();
     <header class="site-header">
         <div class="container">
             <div class="header-inner">
-                <img src="./assets/images/LOGO.png" class="sitebrand" alt="" />
+                <a href="./index.php">
+                    <img src="./assets/images/LOGO.png" class="sitebrand" alt="" />
+                </a>
                 <nav>
                     <ul>
                         <li><a href="index.php">Home</a></li>
                         <li><a href="#">Search</a></li>
 
                         <?php
-                        if (is_admin()) : ?>
+                        if (is_admin()): ?>
                             <li><a href="admin.php">Dashboard</a></li>
-                        <?php
+                            <?php
                         endif; ?>
                         <li><a href="#">Cart</a></li>
                         <li><a href="#">Contact</a></li>
                         <?php
-                        if (is_login()) : ?>
+                        if (is_login()): ?>
                             <li><a href="./profile.php">Profile</a></li>
                             <li><a href="./logout.php">Logout</a></li>
-                        <?php
-                        else : ?>
+                            <?php
+                        else: ?>
                             <li><a href="./login.php">Login</a></li>
                         <?php endif; ?>
                     </ul>
