@@ -1,13 +1,9 @@
-<<<<<<< HEAD
-<?php include_once 'includes/header.php';
+<?php 
 include 'connect.php';
+include_once 'includes/header.php';
 require_once 'displayproduct.php';
 ?>
-=======
-<?php
-include 'connect.php';
-require_once 'includes/header.php'; ?>
->>>>>>> 28d1ccfc6f5cb8c5da26bbfede302f01c52c1334
+
 
 <!-- Best seling image and content -->
 <div class="bestselling">
