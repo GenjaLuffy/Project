@@ -29,7 +29,7 @@ endif; ?>
                 <a href="#"><span><i class="fas fa-box"></i></span>Product</a>
                 <ul class="sub-admin-links">
                     <li>
-                        <a href="product.php"><span><i class="fas fa-box-open"></i></span>Products</a>
+                        <a href="product.php"><span><i class="fas fa-box-open"></i></span>Orders</a>
                     </li>
                     <li>
                         <a href="addproduct.php"><span><i class="fas fa-plus"></i></span>Add Product</a>
