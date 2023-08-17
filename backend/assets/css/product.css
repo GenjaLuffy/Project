@@ -83,3 +83,11 @@ th,
 td {
   text-align: center;
 }
+
+.btn-primary {
+  padding: 10px;
+  background-color: rgb(145, 145, 220);
+  border: 1px solid black;
+  line-height: 1;
+  font-size: 14px;
+}
