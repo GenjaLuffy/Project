@@ -1,12 +1,8 @@
 <?php include_once 'includes/header.php';
 include 'connect.php';
+include_once 'includes/header.php';
 require_once 'displayproduct.php';
 ?>
-
-<?php
-include 'connect.php';
-require_once 'includes/header.php'; ?>
-
 
 <!-- Best seling image and content -->
 <div class="bestselling">
