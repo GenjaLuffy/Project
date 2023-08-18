@@ -25,7 +25,9 @@ $orders = $result->fetch_all(MYSQLI_ASSOC);
 
                     </li>
                     <li>
+
                         <a href="add-product.php"><span><i class="fas fa-plus"></i></span>Add Product</a>
+
                     </li>
                     <!-- <li>
                         <a href="#"><span><i class="fas fa-list-alt"></i></span>Product
@@ -55,6 +57,7 @@ $orders = $result->fetch_all(MYSQLI_ASSOC);
                             <th>Qty</th>
                             <th>Action</th>
                         </tr>
+
                         <?php foreach ($orders as $order): ?>
                             <tr>
                                 <td>
@@ -80,6 +83,7 @@ $orders = $result->fetch_all(MYSQLI_ASSOC);
                                     <?php endif; ?>
                                 </td>
                             </tr>
+
                         <?php endforeach; ?>
                     </table>
                 </form>

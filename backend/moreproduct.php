@@ -16,17 +16,17 @@
             // Display data in HTML
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) { ?>
-                    <div class="best-content">
-                        <figure>
-                            <a href="singleitem.php?id=<?php echo $row['id']; ?>">
-                                <img src="<?php echo $row['image_path']; ?>" alt="<?php echo $row['item_name']; ?>" />
-                            </a>
-                        </figure>
-                        <h5>
-                            <?php echo $row['item_name']; ?>
-                        </h5>
-                    </div>
-                    <?php
+            <div class="best-content">
+                <figure>
+                    <a href="singleitem.php?id=<?php echo $row['id']; ?>">
+                        <img src="<?php echo $row['image_path']; ?>" alt="<?php echo $row['item_name']; ?>" />
+                    </a>
+                </figure>
+                <h5>
+                    <?php echo $row['item_name']; ?>
+                </h5>
+            </div>
+            <?php
                 }
             } else {
                 echo "No products found.";
@@ -56,18 +56,18 @@
             // Display data in HTML
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
-                    ?>
-                    <div class="best-content">
-                        <figure>
-                            <a href="singleitem.php?media_id=<?php echo $row['id']; ?>">
-                                <img src="<?php echo $row['image_path']; ?>" alt="<?php echo $row['item_name']; ?>" />
-                            </a>
-                        </figure>
-                        <h5>
-                            <?php echo $row['item_name']; ?>
-                        </h5>
-                    </div>
-                    <?php
+            ?>
+            <div class="best-content">
+                <figure>
+                    <a href="singleitem.php?media_id=<?php echo $row['id']; ?>">
+                        <img src="<?php echo $row['image_path']; ?>" alt="<?php echo $row['item_name']; ?>" />
+                    </a>
+                </figure>
+                <h5>
+                    <?php echo $row['item_name']; ?>
+                </h5>
+            </div>
+            <?php
                 }
             } else {
                 echo "No media found.";
@@ -104,9 +104,9 @@
         </div>
 
         <?php
-            $sql = "SELECT * FROM cards";
-            $result = mysqli_query($con, $sql);
-            ?>
+        $sql = "SELECT * FROM cards";
+        $result = mysqli_query($con, $sql);
+        ?>
 
         <div class="img-wrap">
 
@@ -119,14 +119,14 @@
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="best-content">';
-                    ?>
-                    <figure>
+            ?>
+            <figure>
 
-                        <a href="singleitem.php?cards_id=<?php echo $row['id']; ?>">
-                            <img src="<?php echo $row['image_path']; ?>" alt="<?php echo $row['item_name']; ?>" />
-                        </a>
-                    </figure>
-                    <?php
+                <a href="singleitem.php?cards_id=<?php echo $row['id']; ?>">
+                    <img src="<?php echo $row['image_path']; ?>" alt="<?php echo $row['item_name']; ?>" />
+                </a>
+            </figure>
+            <?php
                     echo '<h5>' . $row['item_name'] . '</h5>';
                     echo '</div>';
                 }

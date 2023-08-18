@@ -13,6 +13,7 @@ $result = mysqli_query($con, $sql);
 
 ?>
 <style>
+
   .item-table {
     width: 100%;
     border-collapse: separate;
@@ -42,20 +43,14 @@ $result = mysqli_query($con, $sql);
             <a href="#"><span><i class="fas fa-list-alt"></i></span>Product
               Category</a>
           </li> -->
+
         </ul>
-      </li>
-      <li>
-        <a href="#"><span><i class="fas fa-cog"></i></span>Settings</a>
-      </li>
-      <li>
-        <a href="#"><span><i class="fas fa-sign-out-alt"></i></span>Logout</a>
-      </li>
-    </ul>
-  </aside>
-  <div class="admin-content">
-    <div class="dashboard">
-      <h2 class="dashboard-title">Products</h2>
-      <div class="dashboard-content">
+    </aside>
+    <div class="admin-content">
+        <div class="dashboard">
+            <h2 class="dashboard-title">Products</h2>
+            <div class="dashboard-content">
+
 
 
         <table class="item-table">
@@ -88,13 +83,14 @@ $result = mysqli_query($con, $sql);
             <?php }
             ?>
 
-          </tbody>
-        </table>
+
+                    </tbody>
+                </table>
 
 
-      </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <?php include_once 'includes/footer.php'; ?>

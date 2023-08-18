@@ -45,6 +45,7 @@ if (isset($_GET['id'])) {
                         </h2>
                     </div>
                 </div>
+
                 <div class="single-item-container">
                     <section class="single-wrapper">
                         <div class="container">
@@ -106,6 +107,7 @@ if (isset($_GET['id'])) {
                     </section>
                 </div>
         <?php
+
     } else {
         echo "Item not found.";
     }
