@@ -50,15 +50,18 @@ endif; ?>
     </aside>
     <div class="admin-content">
         <div class="dashboard">
-            <h2 class="dashboard-title">Dashboard</h2>
-            <div class="dashboard-content">
-                <p>Welcome to the admin dashboard! You can manage your website here.</p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                    vestibulum, velit id rutrum feugiat, sem urna volutpat enim, a
-                    interdum ipsum orci sed dui.
-                </p>
-            </div>
+            <form action="actions/add_product.php" method="POST" enctype="multipart/form-data">
+                <input type="text" name="product_name" placeholder="Product Name">
+                <input type="file" name="product_image">
+                <input type="text" name="delivery_mode" placeholder="Delivery mode">
+                <input type="text" name="delivery_time" placeholder="Delivery time">
+                <input type="text" name="platform" placeholder="Platform">
+                <input type="text" name="region" placeholder="Region">
+                <input type="text" name="publisher" placeholder="Publisher">
+                <input type="text" name="developer" placeholder="Developer">
+                <input type="text" name="genre" placeholder="Genre">
+                <button type="submit" name="add_product">Add Product</button>
+            </form>
         </div>
     </div>
 </div>

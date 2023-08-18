@@ -1,5 +1,9 @@
-<?php include_once 'includes/header.php'; ?>
-<?php include 'connect.php'; ?>
+<?php
+include_once 'includes/header.php';
+include 'connect.php';
+// require_once 'actions/edit_items.php';
+// require_once 'actions/delete_items.php';
+?>
 
 
 <?php
@@ -10,10 +14,11 @@ $result = mysqli_query($con, $sql);
 ?>
 <style>
   .item-table {
-  width: 100%;
-  border-collapse: separate; 
-  border-spacing: 10px; 
-  margin-top: 20px;}
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px;
+    margin-top: 20px;
+  }
 </style>
 <div class="admin-container">
   <aside class="sidebar">
@@ -25,18 +30,18 @@ $result = mysqli_query($con, $sql);
         <a href="user.php"><span><i class="fas fa-user"></i></span>User</a>
       </li>
       <li>
-        <a href="product.php"><span><i class="fas fa-box"></i></span>Product</a>
+        <a href="products.php"><span><i class="fas fa-box"></i></span>Product</a>
         <ul class="sub-admin-links">
           <li>
-            <a href="product.php"><span><i class="fas fa-box-open"></i></span>Orders</a>
+            <a href="orders.php"><span><i class="fas fa-box-open"></i></span>Orders</a>
           </li>
           <li>
-            <a href="#"><span><i class="fas fa-plus"></i></span>Add Product</a>
+            <a href="add-product.php"><span><i class="fas fa-plus"></i></span>Add Product</a>
           </li>
-          <li>
+          <!-- <li>
             <a href="#"><span><i class="fas fa-list-alt"></i></span>Product
               Category</a>
-          </li>
+          </li> -->
         </ul>
       </li>
       <li>
@@ -76,8 +81,8 @@ $result = mysqli_query($con, $sql);
                   <?php echo $availability; ?>
                 </td>
                 <td>
-                  <a href="edit.php?id=" class="btn-primary" <?php echo $row['id']; ?>>Update</a>
-                  <a href="delete.php?id=" class="btn-primary" <?php echo $row['id']; ?>>Delete</a>
+                  <a href="update_items.php?edit_id=<?php echo $row['id']; ?>" class="btn-primary">Update</a>
+                  <a href="actions/delete_items.php?delete_id=<?php echo $row['id']; ?>" class="btn-primary">Delete</a>
                 </td>
               </tr>
             <?php }

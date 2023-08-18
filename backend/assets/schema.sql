@@ -27,8 +27,7 @@ CREATE TABLE IF NOT EXISTS orders(
   product_detail VARCHAR(255) NOT NULL,
   product_qty INT NOT NULL,
   status VARCHAR(50) NOT NULL DEFAULT 'pending',
-  FOREIGN KEY (customer_id) REFERENCES user_info(ID),
-  FOREIGN KEY (product_id) REFERENCES items(id)
+  FOREIGN KEY (customer_id) REFERENCES user_info(ID)
 );
 
 -- -- For items

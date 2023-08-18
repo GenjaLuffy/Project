@@ -15,24 +15,24 @@ $result = mysqli_query($con, $query);
     <aside class="sidebar">
         <ul class="admin-links">
             <li>
-                <a href="#"><span><i class="fas fa-chart-line"></i></span>Dashboard</a>
+                <a href="admin.php"><span><i class="fas fa-chart-line"></i></span>Dashboard</a>
             </li>
             <li>
-                <a href="#"><span><i class="fas fa-user"></i></span>User</a>
+                <a href="user.php"><span><i class="fas fa-user"></i></span>User</a>
             </li>
             <li>
-                <a href="#"><span><i class="fas fa-box"></i></span>Product</a>
+                <a href="products.php"><span><i class="fas fa-box"></i></span>Product</a>
                 <ul class="sub-admin-links">
                     <li>
-                        <a href="product.php"><span><i class="fas fa-box-open"></i></span>Orders</a>
+                        <a href="orders.php"><span><i class="fas fa-box-open"></i></span>Orders</a>
                     </li>
                     <li>
-                        <a href="addproduct.php"><span><i class="fas fa-plus"></i></span>Add Product</a>
+                        <a href="add-product.php"><span><i class="fas fa-plus"></i></span>Add Product</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="#"><span><i class="fas fa-list-alt"></i></span>Product
                             Category</a>
-                    </li>
+                    </li> -->
                 </ul>
             </li>
             <li>
