@@ -25,7 +25,7 @@ $result = mysqli_query($con, $sql);
                         <a href="product.php"><span><i class="fas fa-box-open"></i></span>Orders</a>
                     </li>
                     <li>
-                        <a href="#"><span><i class="fas fa-plus"></i></span>Add Product</a>
+                        <a href="addproduct.php"><span><i class="fas fa-plus"></i></span>Add Product</a>
                     </li>
                     <li>
                         <a href="#"><span><i class="fas fa-list-alt"></i></span>Product
@@ -71,7 +71,7 @@ $result = mysqli_query($con, $sql);
                             echo '<td>' . $itemName . '</td>';
                             echo '<td>' . $availability . '</td>';
                             echo '<td>';
-                            echo '<a href="update.php?  class = "btn btn-primary" id=' . $row['id'] . '">Update</a> ';
+                            echo '<a href="update.php? id=' . $row['id'] . '">Update</a> ';
                             echo '<a href="edit.php?id=' . $row['id'] . '">Edit</a> ';
                             echo '<a href="delete.php?id=' . $row['id'] . '">Delete</a>';
                             echo '</td>';

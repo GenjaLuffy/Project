@@ -25,7 +25,7 @@ $orders = $result->fetch_all(MYSQLI_ASSOC);
 
                     </li>
                     <li>
-                        <a href="addorder.php"><span><i class="fas fa-plus"></i></span>Add Product</a>
+                        <a href="addproduct.php"><span><i class="fas fa-plus"></i></span>Add Product</a>
                     </li>
                     <li>
                         <a href="#"><span><i class="fas fa-list-alt"></i></span>Product
@@ -56,18 +56,19 @@ $orders = $result->fetch_all(MYSQLI_ASSOC);
                             <th>Action</th>
                         </tr>
                         <?php foreach ($orders as $order) : ?>
-                            <tr>
-                                <td><?php echo $order['id']; ?></td>
-                                <td><?php echo get_user_name($order['customer_id']); ?></td>
-                                <td><?php echo get_product_name($order['product_id']); ?></td>
-                                <td><?php echo $order['product_detail']; ?></td>
-                                <td><?php echo $order['product_qty']; ?></td>
-                                <td><?php echo $order['status']; ?>
-                                    <?php if ($order['status'] == 'pending') : ?>
-                                        <a class="btn btn-primary" href="action.php?id=<?php echo $order['id']; ?>&status=completed">Update</a>
-                                    <?php endif; ?>
-                                </td>
-                            </tr>
+                        <tr>
+                            <td><?php echo $order['id']; ?></td>
+                            <td><?php echo get_user_name($order['customer_id']); ?></td>
+                            <td><?php echo get_product_name($order['product_id']); ?></td>
+                            <td><?php echo $order['product_detail']; ?></td>
+                            <td><?php echo $order['product_qty']; ?></td>
+                            <td><?php echo $order['status']; ?>
+                                <?php if ($order['status'] == 'pending') : ?>
+                                <a class="btn btn-primary"
+                                    href="action.php?id=<?php echo $order['id']; ?>&status=completed">Update</a>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
                         <?php endforeach; ?>
                     </table>
                 </form>
