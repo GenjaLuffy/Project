@@ -63,9 +63,9 @@ $orders = $result->fetch_all(MYSQLI_ASSOC);
                             <td><?php echo $order['product_detail']; ?></td>
                             <td><?php echo $order['product_qty']; ?></td>
                             <td><?php echo $order['status']; ?>
-                                <?php if ($order['status'] == 'pending') : ?>
+                                <?php if ($order['status'] == 'Pending') : ?>
                                 <a class="btn btn-primary"
-                                    href="action.php?id=<?php echo $order['id']; ?>&status=completed">Update</a>
+                                    href="action.php?id=<?php echo $order['id']; ?>&status=Completed">Update</a>
                                 <?php endif; ?>
                             </td>
                         </tr>

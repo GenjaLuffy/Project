@@ -105,11 +105,11 @@ if (isset($_GET['id'])) {
                 </div>
             </section>
         </div>
-<?php
+    <?php
     } else {
         echo "Item not found.";
     }
-}elseif(isset($_GET['media_id'])){
+} elseif (isset($_GET['media_id'])) {
     $media_id = $_GET['media_id'];
 
     // Retrieve data from the 'media' table for the selected item
@@ -119,7 +119,7 @@ if (isset($_GET['id'])) {
     // Display data in HTML
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
-        ?>
+    ?>
         <div class="page-header">
             <div class="container">
                 <h2 class="page-title">
@@ -176,9 +176,7 @@ if (isset($_GET['id'])) {
             </section>
         </div>
     <?php }
-    
-}
-elseif(isset($_GET['cards_id'])){
+} elseif (isset($_GET['cards_id'])) {
     $cards_id = $_GET['cards_id'];
 
     // Retrieve data from the 'cards' table for the selected item
@@ -188,12 +186,12 @@ elseif(isset($_GET['cards_id'])){
     // Display data in HTML
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
-        ?>
+    ?>
         <div class="page-header">
             <div class="container">
                 <h2 class="page-title">
                     <?php echo $row['item_name']; ?>
-                    </h2>
+                </h2>
             </div>
         </div>
         <div class="single-item-container">
@@ -244,8 +242,7 @@ elseif(isset($_GET['cards_id'])){
                 </div>
             </section>
         </div>
-    <?php }
-    
+<?php }
 }
 ?>
 
